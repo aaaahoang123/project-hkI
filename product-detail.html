@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="bg-danger">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <a href="index.html">
+                    <img src="img/redCardsLimitedLogo.png" alt="RCL Logo" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-8">
+                <div class="float-right">
+                    <a class="text-white" href="#">Order Status</a>
+                    |
+                    <a href="#" class="text-white" data-toggle="modal" data-target="#login-modal">Login</a>
+                    /
+                    <a href="#" class="text-white">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <!--<div class="row">-->
+        <a class="navbar-brand" href="index.html"><i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-leaf"></i> Brands
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="products.html">Archies</a>
+                        <a class="dropdown-item" href="products.html">Hallmark</a>
+                        <a class="dropdown-item" href="products.html">Blue Mountain</a>
+                        <a class="dropdown-item" href="products.html">American Greetings</a>
+                        <a class="dropdown-item" href="products.html">Galison</a>
+                        <a class="dropdown-item" href="products.html">Moo</a>
+                        <a class="dropdown-item" href="products.html">Cardstore</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-birthday-cake"></i> Occations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="products.html">Birthday</a>
+                        <a class="dropdown-item" href="products.html">Seasonal</a>
+                        <a class="dropdown-item" href="products.html">Graduation</a>
+                        <a class="dropdown-item" href="products.html">Wedding</a>
+                        <a class="dropdown-item" href="products.html">Party</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="products.html">Any time</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <!--</div>-->
+    </div>
+</nav>
+<!-- Modal -->
+<section class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="login-username" class="col-sm-2 col-form-label text-right"><i class="fa fa-user"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="login-username" placeholder="Your username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="login-pasword" class="col-sm-2 col-form-label text-right"><i class="fa fa-lock"></i></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="login-pasword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label text-right">&nbsp;</label>
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-outline-primary">Login <i class="fa fa-sign-in"></i></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Bread Crumb -->
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a href="#">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="products.html">Happy Birthday</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Birthdayd61</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-xs-12 col-md-5">
+            <div class="card">
+                <!--<div class="card-body">-->
+                    <a href="#">
+                        <img src="img/Husbands_Birthday_Greeting__Card_89070890010139_1_ed4ce5ec.jpg" alt="merychrismas" class="w-100">
+                    </a>
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            <div class="text-center margin-block-5" style="border-bottom: 1px solid #c7c7c7">
+                <h4><strong>HUSBAND`S BIRTHDAY GREETING CARD</strong></h4>
+                <span id="brand">Brand:<a href="#"> imFRIDAY</a></span>
+                <span class="ml-5">CODE: C1707G</span>
+                <br><br>
+                <p><strong class="text-danger"><i class="fa fa-usd"></i> 1(SAVE 10%)</strong></p>
+            </div>
+            <div style="border-bottom: 1px solid #c7c7c7">
+                <div class="text-danger margin-block-5">
+                    SPECIFICATIONS
+                </div>
+                <div style="padding-bottom: 10px;">
+                    ( 28 HX20L) cms
+                </div>
+
+                <div class="text-danger margin-block-5">
+                    DESCRIPTION
+                </div>
+                <div style="padding-bottom: 10px;">
+                    Make your wonderful husband feel extra special on his birthday with this lovely greeting card. This card with a beautiful birthday message is sure to make the day a memorable one for him.
+                </div>
+            </div>
+
+
+            <p style="font-weight: bold;">
+                <span style="color: #D91720;">We normally deliver in 2 working days.</span>
+                <br>
+                You can choose the desired date of delivery on the delivery address page.
+            </p>
+            <button type="button" class="btn btn-outline-warning">
+                <i class="fa fa-cart-plus"></i>
+                Add to Cart
+            </button>
+            <button type="button" class="btn btn-outline-success">
+                <i class="fa fa-check"></i>
+                Buy Now
+            </button>
+        </div>
+    </div>
+    <hr>
+
+    <ul class="nav nav-tabs" id="suggest-product" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#hot-seller-tab" role="tab" aria-controls="home" aria-selected="true">Hot seller</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#you-may-like-tab" role="tab" aria-controls="profile" aria-selected="false">You may also like</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="hot-seller-tab" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row display-flex">
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like1.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like2.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like3.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="you-may-like-tab" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row display-flex">
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like2.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like3.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="">
+                        <a href="#"><img src="img/like4.jpg" alt="like1" width="100%"></a>
+                        <div class="row text-center">
+                            <div class="col-xs-7 col-md-7 text-danger">BirthDayD01</div>
+                            <div class="col-xs-5 col-md-5 text-danger">$1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer style="margin-top: 30px">
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <h3> About Us </h3>
+                    <p>Emiri SUZUHARA - 鈴原えみりYASUE
+                        japanese AV actress</p>
+                    <p>	started around 19~20 years old
+                        birthdate: April 20, 1994
+                        birthplace:  Japan
+                        astrological sign: Aries
+                        measurements: JP 85-60-88 (US 33-24-35)
+                        cup size: C i
+                        height: 160 cm (= 5'3")
+                        weight: unknown</p>
+                    <p>blood type: B</p>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <h3> Contact us </h3>
+                    <ul>
+                        <li> <a href="#">Hotline: 01699690969</a> </li>
+                        <li> <a href="https://www.google.com/maps/place/M%E1%BB%99+Lao,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i/data=!4m2!3m1!1s0x3135accdab6f3ae7:0x60ddfd85d24b0c52?sa=X&ved=0ahUKEwjt8YXP1vDXAhVBS7wKHQzQAZgQ8gEIezAL" target="_blank">Our address: Mo Lao-Ha Dong-Ha Noi</a> </li>
+                        <li> <a href="http://javhd.pro/">Our email: Ouremail@gamil.com </a> </li>
+                        <li> <a href="#">For more information-call: 09666909</a> </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <h3> Follow us</h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Your Email ">
+                                <button class="btn  bg-gray" type="button"> Subcribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

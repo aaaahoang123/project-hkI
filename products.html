@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="bg-danger">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <a href="index.html">
+                    <img src="img/redCardsLimitedLogo.png" alt="RCL Logo" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-8">
+                <div class="float-right">
+                    <a class="text-white" href="#">Order Status</a>
+                    |
+                    <a href="#" class="text-white" data-toggle="modal" data-target="#login-modal">Login</a>
+                    /
+                    <a href="#" class="text-white">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <!--<div class="row">-->
+        <a class="navbar-brand" href="index.html"><i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-leaf"></i> Brands
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Archies</a>
+                        <a class="dropdown-item" href="#">Hallmark</a>
+                        <a class="dropdown-item" href="#">Blue Mountain</a>
+                        <a class="dropdown-item" href="#">American Greetings</a>
+                        <a class="dropdown-item" href="#">Galison</a>
+                        <a class="dropdown-item" href="#">Moo</a>
+                        <a class="dropdown-item" href="#">Cardstore</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-birthday-cake"></i> Occations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Birthday</a>
+                        <a class="dropdown-item" href="#">Seasonal</a>
+                        <a class="dropdown-item" href="#">Graduation</a>
+                        <a class="dropdown-item" href="#">Wedding</a>
+                        <a class="dropdown-item" href="#">Party</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Any time</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-phone"></i> Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <!--</div>-->
+    </div>
+</nav>
+<!-- Modal -->
+<section class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="login-username" class="col-sm-2 col-form-label text-right"><i class="fa fa-user"></i></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="login-username" placeholder="Your username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="login-pasword" class="col-sm-2 col-form-label text-right"><i class="fa fa-lock"></i></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="login-pasword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label text-right">&nbsp;</label>
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-outline-primary">Login <i class="fa fa-sign-in"></i></button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /modal -->
+<section class="modal fade bd-example-modal-lg" id="modal-product-detail" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                        <div class="card">
+                            <!--<div class="card-body">-->
+                            <a href="#">
+                                <img src="img/Husbands_Birthday_Greeting__Card_89070890010139_1_ed4ce5ec.jpg" alt="merychrismas" class="w-100">
+                            </a>
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-7">
+                        <div class="text-center margin-block-5" style="border-bottom: 1px solid #c7c7c7">
+                            <h4><strong>HUSBAND`S BIRTHDAY GREETING CARD</strong></h4>
+                            <span id="brand">Brand:<a href="#"> imFRIDAY</a></span>
+                            <span class="ml-5">CODE: C1707G</span>
+                            <br><br>
+                            <p><strong class="text-danger"><i class="fa fa-usd"></i> 1(SAVE 10%)</strong></p>
+                        </div>
+                        <div style="border-bottom: 1px solid #c7c7c7">
+                            <div class="text-danger margin-block-5">
+                                SPECIFICATIONS
+                            </div>
+                            <div style="padding-bottom: 10px;">
+                                ( 28 HX20L) cms
+                            </div>
+
+                            <div class="text-danger margin-block-5">
+                                DESCRIPTION
+                            </div>
+                            <div style="padding-bottom: 10px;">
+                                Make your wonderful husband feel extra special on his birthday with this lovely greeting card. This card with a beautiful birthday message is sure to make the day a memorable one for him.
+                            </div>
+                        </div>
+
+
+                        <p style="font-weight: bold;">
+                            <span style="color: #D91720;">We normally deliver in 2 working days.</span>
+                            <br>
+                            You can choose the desired date of delivery on the delivery address page.
+                        </p>
+                        <button type="button" class="btn btn-outline-warning">
+                            <i class="fa fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                        <a href="product-detail.html" class="btn btn-outline-success">
+                            <i class="fa fa-info"></i>
+                            Full Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /modal -->
+<main class="container">
+    <!-- Bread Crumb -->
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Happy Birthday</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <form class="form-inline ml-3">
+            <div class="form-row">
+                <div class="form-group">
+                    <select class="form-control">
+                        <option selected disabled>Brands</option>
+                        <option value="1">Archies</option>
+                        <option value="2">Hallmark</option>
+                        <option value="3">Blue Mountain</option>
+                        <option value="4">American Greetings</option>
+                        <option value="5">Galison</option>
+                        <option value="6">Moo</option>
+                        <option value="7">Cardstore</option>
+                    </select>
+                </div>
+                <div class="form-group ml-2">
+                    <select class="form-control">
+                        <option selected disabled>Occations</option>
+                        <option value="1">Birthday</option>
+                        <option value="2">Seasonal</option>
+                        <option value="3">Graduation</option>
+                        <option value="4">Wedding</option>
+                        <option value="5">Party</option>
+                        <option value="6">Any time</option>
+                    </select>
+                </div>
+                <div class="form-group ml-2">
+                    <div class="form-inline">
+                        <input type="text" class="form-control" placeholder="Card's name">
+                    </div>
+
+                </div>
+
+                    <button type="button" class="btn btn-outline-info ml-2">Go <i class="fa fa-search"></i></button>
+
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-6 margin-block">
+            <div class="card" style="width: 100%">
+                <a data-toggle="modal" href="#modal-product-detail">
+                    <img class="card-img-top" src="https://www.archiesonline.com/upload/product/large/Trust_Dreams_Luck_Card_GLK00238_cd2e5879.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trust dream card</h5>
+                    <p>$.100</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 margin-block">
+            <div class="card" style="width: 100%">
+                <a data-toggle="modal" href="#modal-product-detail">
+                    <img class="card-img-top" src="https://www.archiesonline.com/upload/product/large/Trust_Dreams_Luck_Card_GLK00238_cd2e5879.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trust dream card</h5>
+                    <p>$.100</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 margin-block">
+            <div class="card" style="width: 100%">
+                <a data-toggle="modal" href="#modal-product-detail">
+                    <img class="card-img-top" src="https://www.archiesonline.com/upload/product/large/Trust_Dreams_Luck_Card_GLK00238_cd2e5879.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trust dream card</h5>
+                    <p>$.100</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 margin-block">
+            <div class="card" style="width: 100%">
+                <a data-toggle="modal" href="#modal-product-detail">
+                    <img class="card-img-top" src="https://www.archiesonline.com/upload/product/large/Trust_Dreams_Luck_Card_GLK00238_cd2e5879.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trust dream card</h5>
+                    <p>$.100</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 margin-block">
+            <div class="card" style="width: 100%">
+                <a data-toggle="modal" href="#modal-product-detail">
+                    <img class="card-img-top" src="https://www.archiesonline.com/upload/product/large/Trust_Dreams_Luck_Card_GLK00238_cd2e5879.jpg" alt="Card image cap">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trust dream card</h5>
+                    <p>$.100</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer style="margin-top: 30px">
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <h3> About Us </h3>
+                    <p>Emiri SUZUHARA - 鈴原えみりYASUE
+                        japanese AV actress</p>
+                    <p>	started around 19~20 years old
+                        birthdate: April 20, 1994
+                        birthplace:  Japan
+                        astrological sign: Aries
+                        measurements: JP 85-60-88 (US 33-24-35)
+                        cup size: C i
+                        height: 160 cm (= 5'3")
+                        weight: unknown</p>
+                    <p>blood type: B</p>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <h3> Contact us </h3>
+                    <ul>
+                        <li> <a href="#">Hotline: 01699690969</a> </li>
+                        <li> <a href="https://www.google.com/maps/place/M%E1%BB%99+Lao,+H%C3%A0+%C4%90%C3%B4ng,+H%C3%A0+N%E1%BB%99i/data=!4m2!3m1!1s0x3135accdab6f3ae7:0x60ddfd85d24b0c52?sa=X&ved=0ahUKEwjt8YXP1vDXAhVBS7wKHQzQAZgQ8gEIezAL" target="_blank">Our address: Mo Lao-Ha Dong-Ha Noi</a> </li>
+                        <li> <a href="http://javhd.pro/">Our email: Ouremail@gamil.com </a> </li>
+                        <li> <a href="#">For more information-call: 09666909</a> </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3">
+                    <h3> Follow us</h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Your Email ">
+                                <button class="btn  bg-gray" type="button"> Subcribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
