@@ -17,6 +17,7 @@ main.container {
     border-bottom: solid 1px #dedede;
 }
 .label-of-row > a {
+    font-size: 16px;
     float: right;
     color: grey;
 }
