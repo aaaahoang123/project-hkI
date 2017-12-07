@@ -1,0 +1,140 @@
+<main class="container">
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shopping cart</li>
+        </ol>
+    </nav>
+    <section class="row">
+        <div class="col-lg-9">
+            <div class="card-header">
+                Shopping cart
+                <!-- Class float-right để float right =))-->
+                <div class="float-right">
+                    <label class="custom-control mr-0 mb-0 custom-checkbox" style="padding-bottom: 0.4rem">
+                        <input type="checkbox" class="custom-control-input" onchange="selectAll(this)">
+                        <span class="custom-control-indicator"></span>
+                    </label>
+                    <em class="pb-2">Select all</em>
+                </div>
+            </div>
+            <div class="card-block p-0">
+                <table class="table table-responsive-xl">
+                    <thead class="">
+                    <tr>
+                        <th><em>Check</em></th>
+                        <th><em>Product detail</em></th>
+                        <th><em>Quantity</em></th>
+                        <th><em>Price($)</em></th>
+                        <th><em>Discount($)</em></th>
+                        <th><em>Total($)</em></th>
+                        <th><em>Remove</em></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <label class="custom-control mr-0 custom-checkbox">
+                                <input type="checkbox" class="custom-control-input product-selector" name="checkbox">
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </td>
+                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+                        <td><input value="1" type="text" class="form-control"></td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td class="text-center"><button type="button" class="close float-none" onclick="removeproduct(this)">&times;</button></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <label class="custom-control mr-0 custom-checkbox">
+                                <input type="checkbox" class="custom-control-input product-selector" name="checkbox">
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </td>
+                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+                        <td><input value="1" type="text" class="form-control"></td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td class="text-center"><button type="button" class="close float-none" onclick="removeproduct(this)">&times;</button></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <label class="custom-control mr-0 custom-checkbox">
+                                <input type="checkbox" class="custom-control-input product-selector" name="checkbox">
+                                <span class="custom-control-indicator"></span>
+                            </label>
+                        </td>
+                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+                        <td><input value="1" type="text" class="form-control"></td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td class="text-center"><button type="button" class="close float-none" onclick="removeproduct(this)">&times;</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer p-0 bg-white pt-3">
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="">Previous</a>
+                        </li>
+                        <li class="page-item active">
+                            <span class="page-link">1<span class="sr-only">(current)</span>
+                            </span>
+                        </li>
+                        <li class="page-item">
+                            <span class="page-link">2<span class="sr-only">(current)</span>
+                            </span>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link" href="">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <nav class="navbar sticky-top navbar-light bg-light">
+                <div class="row">
+                    <div class="col-md-4">
+                        <em class="mr-2">TOTAL($)</em>
+                    </div>
+                    <div class="col-md-8">
+                        <strong class="text-danger" style="font-size:180%">6969.69</strong>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
+            </nav>
+        </div>
+        <p style="margin: 40px"><a href="#register" target="_blank">Register</a> to Apply/Receive <a style="color: red">Red Card's</a> Vouchers and much more benefit</p>
+    </section>
+</main>
+
+
+    <script>
+        function removeproduct(el) {
+            el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+        }
+        function selectAll(el) {
+            var productSelector = document.getElementsByClassName("product-selector");
+            if (el.checked) {
+                for (var i=0; i<productSelector.length; i++) {
+                    productSelector[i].checked = true;
+                }
+            }
+            else {
+                for (var i=0; i<productSelector.length; i++) {
+                    productSelector[i].checked = false;
+                }
+            }
+        }
+    </script>

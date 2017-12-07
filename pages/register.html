@@ -1,84 +1,86 @@
-<h3 class="text-center mt-3">Register for free and get your benefit as a member</h3>
-<form class="row mt-3">
-    <div class="col-md-6">
-        <h4 class="text-center text-danger mb-3">User Account</h4>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
-            <div class="col-11">
-                <input type="text" class="form-control" placeholder="Username">
+<main class="container">
+    <h3 class="text-center mt-3">Register for free and get your benefit as a member</h3>
+    <form class="row mt-3">
+        <div class="col-md-6">
+            <h4 class="text-center text-danger mb-3">User Account</h4>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
+                <div class="col-11">
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
+                <div class="col-11">
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
+                <div class="col-11">
+                    <input type="password" class="form-control" placeholder="Confirm password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
-            <div class="col-11">
-                <input type="password" class="form-control" placeholder="Password">
+        <div class="col-md-6">
+            <h4 class="text-center text-danger mb-3">Customer Infomation</h4>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
+                <div class="col-11">
+                    <input type="text" class="form-control" placeholder="Your full name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-birthday-cake" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <input id="datepicker" type="text" class="form-control" placeholder="MM/DD/YYYY">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-transgender-alt" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
+                        <option selected disabled="disabled">Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Another</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-phone-square" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <input type="text" class="form-control" placeholder="Phone number">
+                </div>
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
-            <div class="col-11">
-                <input type="password" class="form-control" placeholder="Confirm password">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i></label>
-            <div class="col-11">
-                <input type="email" class="form-control" placeholder="Email">
-            </div>
+    </form>
+
+
+    <div class="row justify-content-center mt-3">
+        <button id="register-button" type="button" class="btn btn-outline-primary">Register <i class="fa fa-sign-in"></i></button>&nbsp;
+        <p style="margin-bottom: 0; margin-top: 0.5rem">By clicking on “Register”, you agree to Red Card’s
+            <a data-toggle="collapse" href="#demo" aria-expanded="false" aria-controls="demo">
+                Terms of use
+            </a>
+        </p>
+    </div>
+
+    <div class="collapse" id="demo">
+        <div style="white-space: pre-line" class="card card-body">
+            We primarily use the information we collect when you use the Platforms to provide the Platforms and related customer service. Some of our Websites and Apps may request location information, and we typically use that information to notify you of stores or products near you. For more information visit, how we use the information we collect.
+
+            The Platforms collect certain information regarding how you access and use the Platforms, and we may utilize third parties to collect and analyze this information on our behalf. For more information visit, the information the Platforms automatically collect..
+
+            We do not share your Personal Information with third parties for their marketing purposes without your opt-in consent. However, we may share non-Personal Information with third parties, in our discretion and without restriction. In addition, we may share your information with other companies in the American Greetings family -- the subsidiaries and affiliates of American Greetings, Inc. For more information visit, how and when we disclose information to third parties.
+
+            The Platforms may contain content served by third parties, and we work with third party service providers to conduct analytics and serve AG advertisements elsewhere online. These third parties may collect certain information about your use of the Platforms or other websites or apps. These third parties may set and access their own tracking devices (including cookies, web beacons, and embedded scripts) and may otherwise collect or have access to information about you and your online activities.
         </div>
     </div>
-    <div class="col-md-6">
-        <h4 class="text-center text-danger mb-3">Customer Infomation</h4>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
-            <div class="col-11">
-                <input type="text" class="form-control" placeholder="Your full name">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-birthday-cake" aria-hidden="true"></i></label>
-            <div class="col-11">
-                <input id="datepicker" type="text" class="form-control" placeholder="MM/DD/YYYY">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-transgender-alt" aria-hidden="true"></i></label>
-            <div class="col-11">
-                <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
-                    <option selected disabled="disabled">Gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Another</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-1 col-form-label"><i class="fa fa-phone-square" aria-hidden="true"></i></label>
-            <div class="col-11">
-                <input type="text" class="form-control" placeholder="Phone number">
-            </div>
-        </div>
-    </div>
-</form>
-
-
-<div class="row justify-content-center mt-3">
-    <button id="register-button" type="button" class="btn btn-outline-primary">Register <i class="fa fa-sign-in"></i></button>&nbsp;
-    <p style="margin-bottom: 0; margin-top: 0.5rem">By clicking on “Register”, you agree to Red Card’s
-        <a data-toggle="collapse" href="#demo" aria-expanded="false" aria-controls="demo">
-            Terms of use
-        </a>
-    </p>
-</div>
-
-<div class="collapse" id="demo">
-    <div style="white-space: pre-line" class="card card-body">
-        We primarily use the information we collect when you use the Platforms to provide the Platforms and related customer service. Some of our Websites and Apps may request location information, and we typically use that information to notify you of stores or products near you. For more information visit, how we use the information we collect.
-
-        The Platforms collect certain information regarding how you access and use the Platforms, and we may utilize third parties to collect and analyze this information on our behalf. For more information visit, the information the Platforms automatically collect..
-
-        We do not share your Personal Information with third parties for their marketing purposes without your opt-in consent. However, we may share non-Personal Information with third parties, in our discretion and without restriction. In addition, we may share your information with other companies in the American Greetings family -- the subsidiaries and affiliates of American Greetings, Inc. For more information visit, how and when we disclose information to third parties.
-
-        The Platforms may contain content served by third parties, and we work with third party service providers to conduct analytics and serve AG advertisements elsewhere online. These third parties may collect certain information about your use of the Platforms or other websites or apps. These third parties may set and access their own tracking devices (including cookies, web beacons, and embedded scripts) and may otherwise collect or have access to information about you and your online activities.
-    </div>
-</div>
+</main>
