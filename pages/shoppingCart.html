@@ -9,7 +9,7 @@
         <div class="col-4 col-lg-3 bs-wizard-step complete">
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-shopping-cart fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a onclick="changetab('cartTab')" class="bs-wizard-dot"></a>
             <div class="bs-wizard-info text-center">
                 Shopping Cart
             </div>
@@ -18,7 +18,7 @@
         <div class="col-4 col-lg-3 bs-wizard-step complete"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-map-marker fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a onclick="changetab('delivery')" class="bs-wizard-dot"></a>
             <div class="bs-wizard-info text-center">
                 Delivery
             </div>
@@ -27,16 +27,29 @@
         <div class="col-4 col-lg-3 bs-wizard-step active"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-fw fa-cc-mastercard"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a onclick="changetab('confirm')" class="bs-wizard-dot"></a>
             <div class="bs-wizard-info text-center">
-                Payment
+                Confirm
             </div>
         </div>
     </section>
-    <section class="row">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="display: none;">
+	  <li class="nav-item">
+	    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#cart-tab" role="tab" aria-controls="home" aria-selected="true">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#confirm" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+	  </li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+	  <div class="tab-pane fade show active" id="cart-tab" role="tabpanel" aria-labelledby="home-tab">
+	  	<section class="row">
 
-        <div class="col-lg-9">
-            <div class="card-header">
+    
+            <div class="card-header col-12">
                 Shopping cart
                 <!-- Class float-right để float right =))-->
                 <div class="float-right">
@@ -47,8 +60,8 @@
                     <em class="pb-2">Select all</em>
                 </div>
             </div>
-            <div class="card-block p-0">
-                <table class="table table-responsive-xl">
+           
+                <table class="table table-responsive-sm overflow-x:auto">
                     <thead class="">
                     <tr>
                         <th><em>Check</em></th>
@@ -70,7 +83,7 @@
                             </label>
                         </td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
-                        <td><input value="1" type="text" class="form-control"></td>
+                        <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
                         <td>$</td>
                         <td>$</td>
@@ -84,7 +97,7 @@
                             </label>
                         </td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
-                        <td><input value="1" type="text" class="form-control"></td>
+                        <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
                         <td>$</td>
                         <td>$</td>
@@ -98,7 +111,7 @@
                             </label>
                         </td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
-                        <td><input value="1" type="text" class="form-control"></td>
+                        <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
                         <td>$</td>
                         <td>$</td>
@@ -106,64 +119,125 @@
                     </tr>
                     </tbody>
                 </table>
+            </section>
+            <div class="card-footer p-0 bg-white pt-3">
+            <h4 class="text-center text-danger mb-3"><em>TOTAL($): 6969.69</em></h4>
             </div>
             <div class="card-footer p-0 bg-white pt-3">
                 <nav aria-label="...">
                     <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="">Previous</a>
-                        </li>
-                        <li class="page-item active">
-                            <span class="page-link">1<span class="sr-only">(current)</span>
-                            </span>
-                        </li>
                         <li class="page-item">
-                            <span class="page-link">2<span class="sr-only">(current)</span>
-                            </span>
-                        </li>
-
-                        <li class="page-item">
-                            <a class="page-link" href="">Next</a>
+                            <a onclick="changetab('delivery')" class="page-link" style="cursor:pointer;">Next</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-        </div>
+
+       
+
+        <p style="margin: 10px"><a href="#register" target="_blank">Register</a> to Apply/Receive <a style="color: red">Red Card's</a> Vouchers and much more benefit</p>
+      </section>
+    </div>
 
 
-        <div class="col-lg-3">
-            <nav class="navbar sticky-top navbar-light bg-light" style="top: 70px">
-                <div class="row">
-                    <div class="col-md-4">
-                        <em class="mr-2">TOTAL($)</em>
-                    </div>
-                    <div class="col-md-8">
-                        <strong class="text-danger" style="font-size:180%">6969.69</strong>
+
+	  <div class="tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="profile-tab">
+	  	<div class="card-header">Delivery</div>
+           <br><h4 class="text-center text-primary mb-3">Customer Infomation</h4>
+             
+	            <div class="form-group row">
+	                <label class="col-4 col-form-label">
+	                  <div class="float-right">
+	                  	<i class="fa fa-user"></i>
+	                  </div>
+	                </label>
+	                <div class="col-5">
+	                    <input type="text" class="form-control" placeholder="Your full name">
+	                </div>
+	            </div>
+
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">
+                      <div class="float-right">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                      </div>
+                    </label>
+                    <div class="col-5">
+                        <input type="email" class="form-control" placeholder="Email">
                     </div>
                 </div>
-                <button type="button" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
-            </nav>
-        </div>
-        <p style="margin: 40px"><a href="#register" target="_blank">Register</a> to Apply/Receive <a style="color: red">Red Card's</a> Vouchers and much more benefit</p>
-    </section>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">
+                      <div class="float-right">
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                      </div>
+                    </label>
+                    <div class="col-5">
+                        <input type="text" class="form-control" placeholder="Phone number">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">
+                      <div class="float-right">
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
+                      </div>
+                    </label>
+                    <div class="col-5">
+                        <input type="text" class="form-control" placeholder="Your address">
+                    </div>
+                </div>
+            <br>
+            <div class="card-footer p-0 bg-white pt-3">
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                            <a onclick="changetab('cartTab')" class="page-link" style="cursor:pointer;">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a onclick="changetab('confirm')" class="page-link" style="cursor:pointer;">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+	   </div>
+		  	
+	 
+	  <div class="tab-pane fade" id="confirm" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="card-header">Confirm</div>
+          <div class="row">
+              <div class="col-sm-6">
+                 <br><br><h3 class="text-primary float-right">Your order is almost done!</h3>
+              </div>           
+              <div class="col-6"><img src="img/mon.png"></div>
+          </div>
+          <div class="card-footer p-0 bg-white pt-3">
+            <div class="row">
+                <div class="col-sm-5">
+                   <div class="float-right">
+                      <h6><em>Confirm your order by pressing</em></h6>
+                   </div>
+                </div>
+                   <div class="col-sm-3">
+                    <button type="button" onclick="placeorder()" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
+                   </div>
+                   <div class="col-sm-4"><h6><em>or go back to change</em></h6></div>
+                </div>
+            </div>
+          
+          <div class="card-footer p-0 bg-white pt-3">
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                            <a onclick="changetab('delivery')" class="page-link" style="cursor:pointer;">Previous</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+      </div>
+	
+    
+    </div>   
 </main>
 
 
-    <script>
-        function removeproduct(el) {
-            el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-        }
-        function selectAll(el) {
-            var productSelector = document.getElementsByClassName("product-selector");
-            if (el.checked) {
-                for (var i=0; i<productSelector.length; i++) {
-                    productSelector[i].checked = true;
-                }
-            }
-            else {
-                for (var i=0; i<productSelector.length; i++) {
-                    productSelector[i].checked = false;
-                }
-            }
-        }
-    </script>
+   
