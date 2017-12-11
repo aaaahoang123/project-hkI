@@ -1,0 +1,29 @@
+#facebook:hover {
+    border: 0px solid #fff;
+    background: #120dec;
+}
+#twitter:hover {
+    border: 0px solid #fff;
+    background: #2e88e7;
+}
+#goole-plus:hover {
+    border: 0px solid #fff;
+    background: #F62B2B;
+}
+#pinterest:hover {
+    border: 0px solid #fff;
+    background: #F62B2B;
+}
+#youtube:hover {
+    border: 0px solid #fff;
+    background: #F62B2B;
+}
+.footer ul{
+	margin-top: 10px;
+}
+/*#fix-icon-footer{
+	margin: 0 3px 0 3px;
+}*/	
+.social li {
+    margin: 0 3px 0 3px;
+}
