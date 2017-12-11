@@ -1,7 +1,3 @@
-function placeorder() {
-	alert('Your order has been confirmed successfully ahihi =))))');
-}
-
 function removeproduct(el) {
             el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
         }

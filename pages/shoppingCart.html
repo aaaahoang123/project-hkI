@@ -6,7 +6,7 @@
         </ol>
     </nav>
     <section class="row bs-wizard border-bottom-0">
-        <div class="col-4 col-lg-3 bs-wizard-step complete">
+        <div class="col-4 bs-wizard-step complete">
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-shopping-cart fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a onclick="changetab('cartTab')" class="bs-wizard-dot"></a>
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="col-4 col-lg-3 bs-wizard-step complete"><!-- complete -->
+        <div class="col-4 bs-wizard-step complete"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-map-marker fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a onclick="changetab('delivery')" class="bs-wizard-dot"></a>
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="col-4 col-lg-3 bs-wizard-step active"><!-- complete -->
+        <div class="col-4 bs-wizard-step active"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-fw fa-cc-mastercard"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a onclick="changetab('confirm')" class="bs-wizard-dot"></a>
@@ -61,11 +61,12 @@
                 </div>
             </div>
            
-                <table class="table table-responsive-sm overflow-x:auto">
-                    <thead class="">
+                <table class="table table-responsive-lg overflow-x:auto">
+                    <thead>
                     <tr>
                         <th><em>Check</em></th>
-                        <th><em>Product detail</em></th>
+                        <th><em>Thumbnail</em></th>
+                        <th><em>Product</em></th>
                         <th><em>Quantity</em></th>
                         <th><em>Price($)</em></th>
                         <th><em>Discount($)</em></th>
@@ -82,6 +83,7 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
+                        <td><img src="img/mini2.jpg" alt=""></td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
                         <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
@@ -96,6 +98,7 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
+                        <td><img src="img/mini2.jpg" alt=""></td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
                         <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
@@ -110,6 +113,7 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
+                        <td><img src="img/mini2.jpg" alt=""></td>
                         <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
                         <td><input style="width: 50%" value="1" type="text" class="form-control"></td>
                         <td>$</td>
@@ -218,7 +222,7 @@
                    </div>
                 </div>
                    <div class="col-sm-3">
-                    <button type="button" onclick="placeorder()" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
+                    <button type="button" data-toggle="modal" data-target="#confirm-alert" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
                    </div>
                    <div class="col-sm-4"><h6><em>or go back to change</em></h6></div>
                 </div>
@@ -234,7 +238,13 @@
                 </nav>
             </div>
       </div>
-	
+	<section class="modal fade" id="confirm-alert" tabindex="-1" role="dialog" aria-hidden="true">
+	  <br><div class="modal-dialog"> 
+	        <div class="alert alert-success">
+		   <h4 class="alert-heading text-center">Place order successfully ^o^</h4>
+		</div>
+	      </div>
+	</section>
     
     </div>   
 </main>
