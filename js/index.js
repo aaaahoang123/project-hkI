@@ -52,6 +52,9 @@ function pageRouter() {
     else if (new RegExp('#contact').test(location.hash)) {
         callPage('pages/contact.html')
     }
+    else if (new RegExp('#orderStatus').test(location.hash)) {
+        callPage('pages/order-done.html')
+    }
 }
 
 // Load page when hash change

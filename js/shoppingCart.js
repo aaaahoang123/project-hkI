@@ -1,6 +1,6 @@
-function removeproduct(el) {
-            el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-        }
+        function removeproduct(el) {
+                    el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+                }
         function selectAll(el) {
             var productSelector = document.getElementsByClassName("product-selector");
             if (el.checked) {
@@ -26,3 +26,4 @@ function removeproduct(el) {
             }
         	
         }
+        

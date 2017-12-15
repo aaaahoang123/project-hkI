@@ -209,24 +209,98 @@
 	  <div class="tab-pane fade" id="confirm" role="tabpanel" aria-labelledby="contact-tab">
           <div class="card-header">Confirm</div>
           <div class="row">
-              <div class="col-sm-6">
-                 <br><br><h3 class="text-primary float-right">Your order is almost done!</h3>
-              </div>           
-              <div class="col-6"><img src="img/mon.png"></div>
+              <div class="col-sm-12">
+              	<table class="table table-responsive-lg overflow-x:auto">
+              		<thead>
+                    <tr>
+                    	<th><em>No.</em></th>
+                        <th><em>Thumbnail</em></th>
+                        <th><em>Product</em></th>
+                        <th><em>Quantity</em></th>
+                        <th><em>Total($)</em></th> 
+                    </tr>
+                    </thead>
+	                 <tbody>
+	                    <tr>
+	                    	<td>1</td> 
+	                        <td><img src="img/mini2.jpg" alt=""></td>
+	                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+	                        <td>N</td>
+	                        <td>$</td> 
+	                    </tr>
+	                    <tr>
+	                    	<td>2</td> 
+	                        <td><img src="img/mini2.jpg" alt=""></td>
+	                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+	                        <td>N</td>
+	                        <td>$</td> 
+	                    </tr>
+	                    <tr>
+	                    	<td>3</td> 
+	                        <td><img src="img/mini2.jpg" alt=""></td>
+	                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
+	                        <td>N</td>
+	                        <td>$</td> 
+	                    </tr>
+	                 </tbody>
+                </table>
+                <div class="card-footer p-0 bg-white pt-3">
+                	<div class="row">
+                	   <div class="col-8">
+		                <h4 class="text-center text-primary mb-3">Customer Infomation</h4>          
+			            <div class="form-group row">
+			                <label class="col-4 col-form-label">
+			                  <div class="float-right">
+			                  	<i class="fa fa-user"></i>
+			                  </div>
+			                </label>
+			                <div class="col-7 text-center">
+			                    Demo
+			                </div>
+			            </div>
+
+		                <div class="form-group row">
+		                    <label class="col-4 col-form-label">
+		                      <div class="float-right">
+		                        <i class="fa fa-envelope" aria-hidden="true"></i>
+		                      </div>
+		                    </label>
+		                    <div class="col-7 text-center">
+		                        Demo
+		                    </div>
+		                </div>
+		                <div class="form-group row">
+		                    <label class="col-4 col-form-label">
+		                      <div class="float-right">
+		                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+		                      </div>
+		                    </label>
+		                    <div class="col-7 text-center">
+		                        Demo 
+		                    </div>
+		                </div>
+		                <div class="form-group row">
+		                    <label class="col-4 col-form-label">
+		                      <div class="float-right">
+		                        <i class="fa fa-address-book" aria-hidden="true"></i>
+		                      </div>
+		                    </label>
+		                    <div class="col-7 text-center">
+		                        Demo
+		                    </div>
+		                </div>
+				        </div>
+				        <div class="col-sm-4">
+				          <div class="form-group row">
+				          	<div class="col-sm-12"><h4 class="text-center text-danger mb-3"><em>TOTAL($): 6969.69</em></h4></div>
+				        	<button type="button" data-toggle="modal" data-target="#confirm-alert" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
+				        	<img src="img/hands.jpg" class="w-100">
+				          </div>
+				        </div>
+			              </div>
+		               </div>
+		            </div>   
           </div>
-          <div class="card-footer p-0 bg-white pt-3">
-            <div class="row">
-                <div class="col-sm-5">
-                   <div class="float-right">
-                      <h6><em>Confirm your order by pressing</em></h6>
-                   </div>
-                </div>
-                   <div class="col-sm-3">
-                    <button type="button" data-toggle="modal" data-target="#confirm-alert" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
-                   </div>
-                   <div class="col-sm-4"><h6><em>or go back to change</em></h6></div>
-                </div>
-            </div>
           
           <div class="card-footer p-0 bg-white pt-3">
                 <nav aria-label="...">
@@ -238,13 +312,43 @@
                 </nav>
             </div>
       </div>
-	<section class="modal fade" id="confirm-alert" tabindex="-1" role="dialog" aria-hidden="true">
-	  <br><div class="modal-dialog"> 
-	        <div class="alert alert-success">
-		   <h4 class="alert-heading text-center">Place order successfully ^o^</h4>
-		</div>
-	      </div>
-	</section>
+<!--modal confirm-->	
+<section class="modal fade" id="confirm-alert" tabindex="-1" role="dialog" aria-hidden="true"><br><br><br>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: 10px solid 	#87CEEB">
+            	<div class="text-center">
+                <h4 class="modal-title">Your order is ready for pickup!</h4>
+                </div>
+            <div class="modal-body">
+                <form> 
+                	<div class="text-center">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#order-done" style="cursor:pointer;">Confirm</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal" style="cursor:pointer;">Decline</button>
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--shopping success-->
+<section class="modal fade" id="order-done" tabindex="-1" role="dialog" aria-hidden="true"><br><br><br>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: 10px solid #90EE90">
+            	<div class="text-center">
+                <h4 class="modal-title">Place order succcessfully!</h4>
+                </div>
+            <div class="modal-body">
+                <form> 
+                	<div class="text-center">
+                            <a class="btn btn-primary" href="#" style="cursor:pointer;">Home</a>
+                            <a class="btn btn-info" href="#orderStatus" style="cursor:pointer;">Order status</a>
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
     
     </div>   
 </main>
