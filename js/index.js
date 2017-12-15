@@ -53,7 +53,7 @@ function pageRouter() {
         callPage('pages/contact.html')
     }
     else if (new RegExp('#orderStatus').test(location.hash)) {
-        callPage('pages/order-done.html')
+        callPage('pages/orderStatus.html')
     }
 }
 
