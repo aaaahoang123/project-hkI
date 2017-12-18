@@ -12,9 +12,10 @@
             <div class="card">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="mini-img-1" role="tabpanel">
-                        <img src="https://www.archiesonline.com/upload/product/large/Husbands_Birthday_Greeting__Card_89070890010139_0_45744b7a.jpg" alt="" class="w-100"></div>
+                        <img id="zoom_01" src="img/retirement1.jpg" alt="" class="w-100" data-zoom-image="img/retirement1.jpg">
+                    </div>
                     <div class="tab-pane fade" id="mini-img-2" role="tabpanel">
-                        <img src="img/Husbands_Birthday_Greeting__Card_89070890010139_1_ed4ce5ec.jpg" alt="" class="w-100">
+                        <img id="zoom_02" src="img/retirement2.jpg" alt="" class="w-100" data-zoom-image="img/retirement2.jpg">
                     </div>
                 </div>
 
@@ -22,12 +23,12 @@
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-top: 10px;">
                 <li class="nav-item">
                     <a class="nav-link active mini-img" data-toggle="pill" href="#mini-img-1" role="tab" aria-controls="pills-home" aria-selected="true">
-                        <img src="https://www.archiesonline.com/upload/product/icon/Husbands_Birthday_Greeting__Card_89070890010139_0_45744b7a.jpg" alt="">
+                        <img src="img/retirement1.jpg" width="60" height="60" alt="">
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mini-img" id="pills-profile-tab" data-toggle="pill" href="#mini-img-2" role="tab" aria-controls="pills-profile" aria-selected="false">
-                        <img src="img/mini2.jpg" alt="">
+                        <img src="img/mini2.jpg" width="60" height="60" alt="">
                     </a>
                 </li>
             </ul>
@@ -147,3 +148,8 @@
         </div>
     </div>
 </main>
+<script type="text/javascript" src="js/jquery.elevatezoom.js"></script>
+<script type="text/javascript">
+    $("#zoom_01").elevateZoom();
+    $("#zoom_02").elevateZoom();
+</script>
