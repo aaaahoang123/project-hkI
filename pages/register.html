@@ -1,62 +1,73 @@
 <main class="container">
     <h3 class="text-center mt-3">Register for free and get your benefit as a member</h3>
-    <form class="row mt-3">
+    <form class="row mt-3" name="register-form">
         <div class="col-md-6">
             <h4 class="text-center text-danger mb-3">User Account</h4>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
                 <div class="col-11">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" name="username" onkeyup="warningUsername()">
+                    <span id="usernameMessage"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
                 <div class="col-11">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Passwords" name="password" onkeyup="warningPassword()">
+                    <span id="passwordMessage"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-lock"></i></label>
                 <div class="col-11">
-                    <input type="password" class="form-control" placeholder="Confirm password">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-1 col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i></label>
-                <div class="col-11">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="password" class="form-control" placeholder="Confirm passwords" name="confirmPassword" onkeyup="checkPassword()">
+                    <span id="confirmPasswordMessage"></span>
                 </div>
             </div>
         </div>
+
         <div class="col-md-6">
             <h4 class="text-center text-danger mb-3">Customer Infomation</h4>
             <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <input type="email" class="form-control" placeholder="Email" name="email" onkeyup="validate()">
+                    <span id="emailMessage"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-1 col-form-label"><i class="fa fa-address-book" aria-hidden="true"></i></label>
+                <div class="col-11">
+                    <input type="text" class="form-control" placeholder="Your address" name="address">
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-user"></i></label>
                 <div class="col-11">
-                    <input type="text" class="form-control" placeholder="Your full name">
+                    <input type="text" class="form-control" placeholder="Your full name" name="fullName">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-birthday-cake" aria-hidden="true"></i></label>
                 <div class="col-11">
-                    <input id="datepicker" type="text" class="form-control" placeholder="MM/DD/YYYY">
+                    <input id="datepicker" type="text" class="form-control" placeholder="MM/DD/YYYY" name="birthDay">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-transgender-alt" aria-hidden="true"></i></label>
                 <div class="col-11">
-                    <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
+                    <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref" name="gender">
                         <option selected disabled="disabled">Gender</option>
                         <option value="1">Male</option>
-                        <option value="2">Female</option>
-                        <option value="3">Another</option>
+                        <option value="-1">Female</option>
+                        <option value="0">Another</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-1 col-form-label"><i class="fa fa-phone-square" aria-hidden="true"></i></label>
                 <div class="col-11">
-                    <input type="text" class="form-control" placeholder="Phone number">
+                    <input type="text" class="form-control" placeholder="Phone number" name="phone">
                 </div>
             </div>
         </div>
@@ -64,7 +75,10 @@
 
 
     <div class="row justify-content-center mt-3">
-        <button id="register-button" type="button" class="btn btn-outline-primary">Register <i class="fa fa-sign-in"></i></button>&nbsp;
+    	<button id="register-button" type="button" class="btn btn-outline-primary float-right" style="cursor: pointer;" onclick="submit()">
+	    	Register <i class="fa fa-sign-in"></i>
+	    </button>&nbsp;
+	       
         <p style="margin-bottom: 0; margin-top: 0.5rem">By clicking on “Register”, you agree to Red Card’s
             <a data-toggle="collapse" href="#demo" aria-expanded="false" aria-controls="demo">
                 Terms of use
