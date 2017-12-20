@@ -1,19 +1,31 @@
 function validateUsername () {
 	var username = document.forms["register-form"]["username"].value;
+	var message1 = document.getElementById('usernameMessage');
 	if (username.length < 8 ) {
-		toastr["warning"]("Username must contain 8 characters at least!");
+		message1.style.color = "red";
+        message1.innerHTML = '&nbsp*Username must contain at least 8 characters';
 		return false;
 	}
-	else return true;
+	else {
+    	message2.style.color = "#66cc66";
+        message2.innerHTML = '&nbspValid passwords!';
+        return true;
+    }
 }
 
 function validatePassword () {
 	var password = document.forms["register-form"]["password"].value;
+	var message2 = document.getElementById('passwordMessage');
 	if (password.length < 8 ) {
-		toastr["warning"]("Passwords must contain 8 characters at least!");
+		message2.style.color = "red";
+        message2.innerHTML = '&nbsp*Passwords must contain at least 8 characters';
 		return false;
 	}
-	else return true;
+	else {
+    	message1.style.color = "#66cc66";
+        message1.innerHTML = '&nbspValid username!';
+        return true;
+    } 
 }
 
 function checkPassword() {
@@ -111,29 +123,4 @@ function submit() {
 		}	
 }
 
-function warningUsername() {
-	var username = document.forms["register-form"]["username"].value;
-	var message1 = document.getElementById('usernameMessage');
-	if (username.length < 8 ) {
-		message1.style.color = "red";
-        message1.innerHTML = '&nbsp*Username must contain at least 8 characters';
-    }
-    else {
-    	message1.style.color = "#66cc66";
-        message1.innerHTML = '&nbspValid username!';
-    } 
-}
-
-function warningPassword() {
-	var password = document.forms["register-form"]["password"].value;
-	var message2 = document.getElementById('passwordMessage');
-	if (password.length < 8 ) {
-		message2.style.color = "red";
-        message2.innerHTML = '&nbsp*Passwords must contain at least 8 characters';
-    }
-    else {
-    	message2.style.color = "#66cc66";
-        message2.innerHTML = '&nbspValid passwords!';
-    }
-}
 
