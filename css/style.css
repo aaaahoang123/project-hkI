@@ -300,6 +300,9 @@ main.container {
 .hover-pointer:hover {
     cursor: pointer;
 }
+.hover-underline:hover {
+    text-decoration: underline !important
+}
 .bs-wizard {margin-top: 40px;}
 
 /*Form Wizard*/
