@@ -60,6 +60,7 @@ function pageRouter() {
     }
     else if (new RegExp('#products').test(location.hash)) {
         callPage('pages/products.html');
+        loadController('js/products.js');
     }
     else if (new RegExp('#productDetail').test(location.hash)) {
         callPage('pages/product-detail.html')
