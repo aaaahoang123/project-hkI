@@ -53,6 +53,7 @@ function loadController(scriptSrc) {
 function pageRouter() {
     if (location.hash === '#' || location.hash === '') {
         callPage('pages/home.html');
+        loadController("js/home.js");
     }
     else if (new RegExp('#register').test(location.hash)) {
         callPage('pages/register.html');
