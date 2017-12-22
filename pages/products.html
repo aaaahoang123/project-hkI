@@ -10,7 +10,7 @@
             </div>
 
             <!-- modal body -->
-            <div class="modal-body">
+            <div class="modal-body" id="bodyProductDetail">
                 <div class="row">
                     <div class="col-xs-12 col-md-5">
                         <div class="card">
@@ -23,25 +23,19 @@
                     </div>
                     <div class="col-xs-12 col-md-7">
                         <div class="text-center margin-block-5" style="border-bottom: 1px solid #c7c7c7">
-                            <h4><strong>HUSBAND`S BIRTHDAY GREETING CARD</strong></h4>
-                            <span id="brand">Brand:<a href="#"> imFRIDAY</a></span>
-                            <span class="ml-5">CODE: C1707G</span>
+                            <h4><strong id="cardName"></strong></h4>
+                            <span id="brand"><a href="#"></a></span>
+                            <span class="ml-5" id="code"></span>
                             <br><br>
-                            <p><strong class="text-danger"><i class="fa fa-usd"></i> 1(SAVE 10%)</strong></p>
+                            <p><strong class="text-danger"></strong></p>
                         </div>
                         <div style="border-bottom: 1px solid #c7c7c7">
-                            <div class="text-danger margin-block-5">
-                                SPECIFICATIONS
-                            </div>
-                            <div style="padding-bottom: 10px;">
-                                ( 28 HX20L) cms
-                            </div>
-
+                            
                             <div class="text-danger margin-block-5">
                                 DESCRIPTION
                             </div>
-                            <div style="padding-bottom: 10px;">
-                                Make your wonderful husband feel extra special on his birthday with this lovely greeting card. This card with a beautiful birthday message is sure to make the day a memorable one for him.
+                            <div style="padding-bottom: 10px;" id="descriptionBody">
+                                
                             </div>
                         </div>
 
@@ -78,26 +72,26 @@
         <form class="form-inline ml-3">
             <div class="form-row">
                 <div class="form-group">
-                    <select class="form-control">
+                    <select class="form-control" id="selectBrand">
                         <option selected disabled>Brands</option>
-                        <option value="1">Archies</option>
-                        <option value="2">Hallmark</option>
-                        <option value="3">Blue Mountain</option>
-                        <option value="4">American Greetings</option>
-                        <option value="5">Galison</option>
-                        <option value="6">Moo</option>
-                        <option value="7">Cardstore</option>
+                        <option value="5a3a282cd7ea3a2046d2683c">Archies</option>
+                        <option value="5a3b717a286d242000b05096">Hallmark</option>
+                        <option value="5a3b728c286d242000b05097">Blue Mountain</option>
+                        <option value="5a3b730e286d242000b05098">American Greetings</option>
+                        <option value="5a3b7365286d242000b05099">Galison</option>
+                        <option value="5a3b73c8286d242000b0509a">Moo</option>
+                        <option value="5a3b7474286d242000b0509b">Cardstore</option>
                     </select>
                 </div>
                 <div class="form-group ml-2">
-                    <select class="form-control">
-                        <option selected disabled>Occations</option>
-                        <option value="1">Birthday</option>
-                        <option value="2">Seasonal</option>
-                        <option value="3">Graduation</option>
-                        <option value="4">Wedding</option>
-                        <option value="5">Party</option>
-                        <option value="6">Any time</option>
+                    <select class="form-control" id="selectCategory">
+                        <option selected disabled>Categories</option>
+                        <option value="5a3bc84c60738a2000ebca1d">Birthday</option>
+                        <option value="5a3bc8a260738a2000ebca1e">Thank You Cards</option>
+                        <option value="5a3bc8e060738a2000ebca1f">Baby Cards</option>
+                        <option value="5a3bc90760738a2000ebca20">Engagement Cards</option>
+                        <option value="5a3bc92d60738a2000ebca21">Wedding Cards</option>
+                        <option value="5a3bc94f60738a2000ebca22">Anniversary Cards</option>
                     </select>
                 </div>
                 <div class="form-group ml-2">
@@ -107,146 +101,25 @@
 
                 </div>
 
-                <button type="button" class="btn btn-outline-info ml-2">Go <i class="fa fa-search"></i></button>
+                <button type="button" class="btn btn-outline-info ml-2" onclick="searchProducts()">Go <i class="fa fa-search"></i></button>
 
             </div>
         </form>
     </div>
     <div class="row" id="products-view">
-        <!-- <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/retirement1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/retirement1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/retirement1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/retirement1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/engagel1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/engagel1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/engagel1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control">
-            <div class="card border-0 w-100">
-                <a data-target="#modal-product-detail" data-toggle="modal" class="hover-pointer">
-                    <img class="card-img-top" src="img/engagel1.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trust dream card</h5>
-                    <p>$.100</p>
-                </div>
-            </div>
-            <div class="text-white text-center add-cart-tag">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to Cart
-            </div> -->
+        
             
-        </div>
-        <nav aria-label="..." style="padding-top: 30px;">
-                <ul class="pagination justify-content-end">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="">Previous</a>
-                    </li>
-                    <li class="page-item active">
-                        <span class="page-link">1<span class="sr-only">(current)</span>
-                        </span>
-                    </li>
-                    <li class="page-item">
-                        <span class="page-link">2<span class="sr-only">(current)</span>
-                        </span>
-                    </li>
-                    <li class="page-item">
-                        <span class="page-link">3<span class="sr-only">(current)</span>
-                        </span>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="">Next</a>
-                    </li>
-                </ul>
-            </nav>
+    </div>
+    <nav aria-label="..." style="padding-top: 30px;">
+            <ul class="pagination justify-content-end" id="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="" id="prev-btn">Previous</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" href="" id="next-btn">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </main>
