@@ -12,9 +12,14 @@ function loadData() {
 		type:'GET',
 		success: function(res){
 			var page = Number(getURLParameter('page'));
+
+			
+			
 			var totalPage = Number(res.totalPage);
+			
 			if (page === 0) {
 				document.querySelector("#next-btn").href = location.hash + '?page=2';
+			
 			}
 			if (page === 1) {
 				document.querySelector("#next-btn").href = location.hash.replace('page=1', 'page=2');
@@ -24,7 +29,7 @@ function loadData() {
 				document.querySelector("#prev-btn").parentElement.classList.remove('disabled');
 				document.querySelector("#prev-btn").href = location.hash.replace('page=' + page, 'page=' + (page - 1))
 			}
-			if (page === totalPage) {
+			if (page === totalPage || totalPage === 1) {
 				document.querySelector("#next-btn").parentElement.classList.add('disabled');
 			}
 			for(var i = totalPage-1; i >= 0; i--) {
@@ -60,10 +65,10 @@ function loadData() {
 
 $(document).ready(function(){
 	loadData();
+	checkSelect();
 })
 
 function openDetailModal(data){
-	console.log(data);
 	document.querySelector('#bodyProductDetail > div > div > div > a > img').src = data.images.bigImgs[0];
 	document.querySelector('#bodyProductDetail > div > div.col-md-7 > div > h4 ').innerHTML = data.name;
 	var brandName;
@@ -113,9 +118,9 @@ function searchProducts(){
 	else if(categoryId !== 'Categories'){
 		location.hash = '#products/?categoryId=' + categoryId;
 	}
-	console.log(brandId);
-	console.log(categoryId);
-	
+	else {
+		location.hash = '#products/';
+	}
 }
 
 function bindCard(data, element) {
@@ -168,9 +173,7 @@ function bindCard(data, element) {
 
 	element.appendChild(column);
 }
-if(new RegExp('page=1').test(location.hash) || !RegExp('page=').test(location.hash)){
 
-}
 
 var getURLParameter = function (name) {
 	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.hash)||[undefined,""])[1].replace(/\+/g, '%20'))||null;
@@ -183,22 +186,46 @@ function createPagination(i, element, page) {
 	
 	var pageLink = document.createElement('span');
 	pageLink.className = 'page-link';
-	pageLink.innerHTML = i +1;
-
+	pageLink.innerHTML = i + 1;
 	var anchor = document.createElement('a');
 	console.log('page=' + page);
 	anchor.href = location.hash.replace('page=' + page, 'page=' + (i + 1));
+
+	// var urlHasCategory = new RegExp("categoryId=").test(location.hash);
+	// var urlHasBrand = new RegExp("brandId=").test(location.hash);
 	if (backupPage === 0) {
 		anchor.href = location.hash + '?page=' + (i + 1);
 	}
+	// else if (urlHasCategory || urlHasBrand) {
+	// 	anchor.href = location.hash + '&page=' + (i + 1);
+	// }
 	anchor.appendChild(pageLink);
 	var pageItem = document.createElement('li');
+
+
 	pageItem.className = 'page-item';
 	if(i === (page - 1)) {
 		pageItem.className += ' active';
+		pageItem.appendChild(pageLink);
 	}
-
-
-	pageItem.appendChild(anchor);
+	else {
+		pageItem.appendChild(anchor);
+	}
+	
 	element.after(pageItem);
+}
+function checkSelect(){
+	var brandId = getURLParameter('brandId');
+	var categoryId = getURLParameter('categoryId');
+	for (var i=0; i<document.querySelectorAll("#selectBrand > option").length; i++) {
+		if(brandId === document.querySelectorAll("#selectBrand > option")[i].value){
+			document.querySelectorAll("#selectBrand > option")[i].setAttribute('selected', 'true');
+		}
+	}
+	for(var j = 0; j < document.querySelectorAll('#selectCategory > option').length; j++){
+		if(categoryId === document.querySelectorAll('#selectCategory > option')[j].value){
+			document.querySelectorAll('#selectCategory > option')[j].setAttribute('selected', 'true');
+		}
+	}
+	
 }
