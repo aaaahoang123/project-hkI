@@ -101,6 +101,7 @@ function openDetailModal(data){
 	document.querySelector('#bodyProductDetail > div > div.col-md-7 > div > p > strong').innerHTML = data.price;
 	document.getElementById('descriptionBody').innerHTML = data.shortDetail;
 	// document.getElementById('cardName').innerHTML = data.name;
+	document.querySelector('#bodyProductDetail > div > div.col-md-7 > a.btn-outline-success').href = '#productDetail/' + data._id;
 
 	$('#modal-product-detail').modal('show');
 }
@@ -162,8 +163,16 @@ function bindCard(data, element) {
 	var cartTag = document.createElement('div');
 	cartTag.className = 'text-white text-center add-cart-tag';
 
-	cartTag.appendChild(cartIcon);
-	cartTag.appendChild(document.createTextNode(' Add to Cart'));
+	var cartAnchor = document.createElement('a');
+
+	cartAnchor.onclick = function() {
+		addToCart(data._id);
+	};
+
+	cartAnchor.appendChild(cartIcon);
+	cartAnchor.appendChild(document.createTextNode(' Add to Cart'));
+
+	cartTag.appendChild(cartAnchor);
 
 	var column = document.createElement('div');
 	column.className = 'col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control';
