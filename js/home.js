@@ -3,9 +3,8 @@ function loadHallMarkProduct() {
   	url:'https://rlcapi.herokuapp.com/api/products?brandId=5a3b717a286d242000b05096',
   	type:'GET',
   	success: function(res) {
-	    for (var i=0;i<res.length && i<4;i++) {
-	    	createProductTag(res[i], document.getElementById('hallmark-cards'));
-
+	    for (var i=0; i<res.items.length && i<4; i++) {
+	    	createProductTag(res.items[i], document.getElementById('hallmark-cards'));
 	    }
   	},
   	error: function(res) {
@@ -23,9 +22,9 @@ function loadBirthdayProduct() {
   	url:'https://rlcapi.herokuapp.com/api/products?categoryId=5a3bc84c60738a2000ebca1d',
   	type:'GET',
   	success: function(res) {
-	    for (var i=0;i<res.length && i<4;i++) {
-	    	createProductTag(res[i], document.getElementById('birthday-cards'));
-
+	    for (var i=0; i<res.items.length && i<4; i++) {
+	    	createProductTag(res.items[i], document.getElementById('birthday-cards'));
+            console.log(res);
 	    }
   	},
   	error: function(res) {
@@ -45,6 +44,7 @@ function createProductTag(data,element) {
 	img.alt = data.name;
 
 	var anchorImg = document.createElement('a');
+	anchorImg.href = '#productDetail/' + data._id;
 
 	anchorImg.appendChild(img);
 

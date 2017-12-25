@@ -64,7 +64,8 @@ function pageRouter() {
         loadController('js/products.js');
     }
     else if (new RegExp('#productDetail').test(location.hash)) {
-        callPage('pages/product-detail.html')
+        callPage('pages/product-detail.html');
+        loadController("js/product-detail.js");
     }
     else if (new RegExp('#cart').test(location.hash)) {
         callPage('pages/shoppingCart.html');
