@@ -89,3 +89,17 @@ window.addEventListener('hashchange', function () {
         pageRouter();
     }, 300);
 });
+function addToCart(id) {
+
+  if(localStorage.getItem('cart') === null) {
+    var idArray = new Array(id);
+    localStorage.setItem('cart', JSON.stringify(idArray));
+    alert('ok');
+  }
+  else {
+    idArray = JSON.parse(localStorage.getItem('cart'));
+    idArray.push (id);
+    localStorage.setItem('cart', JSON.stringify(idArray));
+    alert('ok');
+  }
+}
