@@ -53,6 +53,7 @@ function loadController(scriptSrc) {
 function pageRouter() {
     if (location.hash === '#' || location.hash === '') {
         callPage('pages/home.html');
+        loadController("js/home.js");
     }
     else if (new RegExp('#register').test(location.hash)) {
         callPage('pages/register.html');
@@ -63,7 +64,8 @@ function pageRouter() {
         loadController('js/products.js');
     }
     else if (new RegExp('#productDetail').test(location.hash)) {
-        callPage('pages/product-detail.html')
+        callPage('pages/product-detail.html');
+        loadController("js/product-detail.js");
     }
     else if (new RegExp('#cart').test(location.hash)) {
         callPage('pages/shoppingCart.html');
