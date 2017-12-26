@@ -18,7 +18,9 @@ function loadDetail() {
 	    	document.querySelector("span.ml-5").innerHTML = 'Code: ' + res.item.productCode;
 	    	document.querySelector("strong.text-danger").innerHTML = 'Price: ' + res.item.price;
 	    	document.querySelector("div[target]").innerHTML = res.item.description;
-
+	    	document.querySelector('#product-detail > div.col-md-7 > button.btn-outline-warning').onclick = function(){
+	    		addToCart(res.item._id);
+	    	};
 	    	var idPage = res.item._id;
 
  //load phan related product.
@@ -109,6 +111,7 @@ function createHint(data,element) {
 
 	divReponsive.appendChild(anchorImg);
 	divReponsive.appendChild(textCenter);
+
 
 	element.appendChild(divReponsive)
 }

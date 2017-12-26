@@ -71,17 +71,25 @@ function createProductTag(data,element) {
 	cardIcon.className = 'fa fa-cart-plus';
 	cardIcon.setAttribute('aria-hidden','true');
 
-	var addToCart = document.createElement('div');
-	addToCart.className = 'text-white text-center add-cart-tag';
+	var cartTag = document.createElement('div');
+	cartTag.className = 'text-white text-center add-cart-tag';
 
-	addToCart.appendChild(cardIcon);
-	addToCart.appendChild(document.createTextNode(' Add to Cart'));
+	var cartAnchor = document.createElement('a');
+	cartAnchor.onclick = function() {
+		addToCart(data._id);
+	};
+	cartAnchor.className = 'hover-pointer';
+
+	cartAnchor.appendChild(cardIcon);
+	cartAnchor.appendChild(document.createTextNode(' Add to Cart'));
+
+	cartTag.appendChild(cartAnchor);
 
 	var column = document.createElement('div');
 	column.className = 'col-md-6 col-sm-6 col-lg-3 margin-block add-cart-tag-control';
 
 	column.appendChild(card);
-	column.appendChild(addToCart);
+	column.appendChild(cartTag);
 
 	element.appendChild(column);
 }
