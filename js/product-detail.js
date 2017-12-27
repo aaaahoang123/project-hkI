@@ -15,9 +15,10 @@ function loadDetail() {
 	    	document.getElementById('mini_02').src = res.item.images.smallImgs[1];
 	    	document.querySelector("h4").innerHTML = res.item.name;
 	    	document.querySelector("span > a").innerHTML = ' ' + res.brandName;
+	    	document.querySelector("span > a").href = '#products/?brandId=' + res.item.brandId,
 	    	document.querySelector("span.ml-5").innerHTML = 'Code: ' + res.item.productCode;
 	    	document.querySelector("strong.text-danger").innerHTML = 'Price: ' + res.item.price;
-	    	document.querySelector("div[target]").innerHTML = res.item.description;
+	    	document.querySelector("#productDescription").innerHTML = res.item.description;
 
 	    	var idPage = res.item._id;
 

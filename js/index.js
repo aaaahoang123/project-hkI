@@ -1,3 +1,5 @@
+const orderApi = "https://rlcapi.herokuapp.com/api/orders";
+
 // config toastr
 toastr.options = {
   "closeButton": false,
