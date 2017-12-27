@@ -18,8 +18,12 @@ function loadData() {
 			var totalPage = Number(res.totalPage);
 			
 			if (page === 0) {
-				document.querySelector("#next-btn").href = location.hash + '?page=2';
-			
+				if(getURLParameter('brandId') || getURLParameter('categoryId')){
+					document.querySelector("#next-btn").href = location.hash + '&page=2';
+				}
+				else{
+					document.querySelector("#next-btn").href = location.hash + '?page=2';
+				}
 			}
 			if (page === 1) {
 				document.querySelector("#next-btn").href = location.hash.replace('page=1', 'page=2');
@@ -102,7 +106,9 @@ function openDetailModal(data){
 	document.getElementById('descriptionBody').innerHTML = data.shortDetail;
 	// document.getElementById('cardName').innerHTML = data.name;
 	document.querySelector('#bodyProductDetail > div > div.col-md-7 > a.btn-outline-success').href = '#productDetail/' + data._id;
-
+	document.querySelector('#bodyProductDetail > div > div.col-md-7 > button.btn-outline-warning').onclick = function() {
+		addToCart(data._id);
+	};
 	$('#modal-product-detail').modal('show');
 }
 
@@ -164,7 +170,7 @@ function bindCard(data, element) {
 	cartTag.className = 'text-white text-center add-cart-tag';
 
 	var cartAnchor = document.createElement('a');
-
+	cartAnchor.className = 'hover-pointer';
 	cartAnchor.onclick = function() {
 		addToCart(data._id);
 	};
