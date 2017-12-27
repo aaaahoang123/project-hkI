@@ -27,3 +27,19 @@
         	
         }
         
+
+        console.log(localStorage.getItem('cart'));
+
+        $.ajax({
+            url: 'http://localhost:3000/api/products',
+            type: "GET",
+            data: {
+                itemIds: localStorage.getItem('cart'),
+            },
+            success: function(res) {
+                console.log(res)
+            },
+            error: function(res) {
+                console.log(res)
+            }
+        });
