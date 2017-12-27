@@ -75,7 +75,8 @@ function pageRouter() {
         callPage('pages/contact.html')
     }
     else if (new RegExp('#orderStatus').test(location.hash)) {
-        callPage('pages/orderStatus.html')
+        callPage('pages/orderStatus.html');
+        loadController('js/orderStatus.js');
     }
 }
 
@@ -111,7 +112,7 @@ function checkExistInCart(id){
   var isExist = false;
   for(var i = 0; i < JSON.parse(localStorage.getItem('cart')).length; i++){
     if((JSON.parse(localStorage.getItem('cart')))[i] === id){
-      toastr["success"]('<strong>Products already in the cart.</strong>');
+      toastr["warning"]('<strong>Products already in the cart.</strong>');
       isExist = true;
       break;
     }

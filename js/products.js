@@ -18,8 +18,12 @@ function loadData() {
 			var totalPage = Number(res.totalPage);
 			
 			if (page === 0) {
-				document.querySelector("#next-btn").href = location.hash + '?page=2';
-			
+				if(getURLParameter('brandId') || getURLParameter('categoryId')){
+					document.querySelector("#next-btn").href = location.hash + '&page=2';
+				}
+				else{
+					document.querySelector("#next-btn").href = location.hash + '?page=2';
+				}
 			}
 			if (page === 1) {
 				document.querySelector("#next-btn").href = location.hash.replace('page=1', 'page=2');
