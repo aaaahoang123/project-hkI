@@ -22,10 +22,10 @@ function login(){
       data: loginData,
       success: function(res){
         console.log(res);
-        toastr["success"]('<strong>Đăng nhập thành công.</strong>');
+        toastr["success"]('<strong>Login successfully!</strong>');
         localStorage.setItem("token", res.token);
         localStorage.setItem("username", username);
-    		setTimeout("location.reload(true);",1500);
+    		setTimeout("location.reload(true);",1200);       
       },
       error: function(errorRes){
         console.log(errorRes.responseJSON.error);
