@@ -1,3 +1,8 @@
+var productId = localStorage.getItem('cart');
+    if(localStorage.getItem('token') != null) {
+       window.location="#"
+    }
+    
 function validateUsername () {
 	var username = document.forms["register-form"]["username"].value;
 	var message1 = document.getElementById('usernameMessage');
@@ -7,8 +12,8 @@ function validateUsername () {
 		return false;
 	}
 	else {
-    	message2.style.color = "#66cc66";
-        message2.innerHTML = '&nbspValid passwords!';
+    	message1.style.color = "#66cc66";
+        message1.innerHTML = '&nbspValid passwords!';
         return true;
     }
 }
@@ -22,8 +27,8 @@ function validatePassword () {
 		return false;
 	}
 	else {
-    	message1.style.color = "#66cc66";
-        message1.innerHTML = '&nbspValid username!';
+    	message2.style.color = "#66cc66";
+        message2.innerHTML = '&nbspValid username!';
         return true;
     } 
 }
@@ -114,7 +119,7 @@ function submit() {
 						toastr["error"](res.error);
 						return;
 					}
-					toastr["success"]("Register successfully!");
+					$('#register-done').modal('show');
 				},
 				error: function(res){
 					toastr["warning"](res.responseJSON.error);
