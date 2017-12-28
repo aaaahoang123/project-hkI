@@ -1,7 +1,6 @@
-var productId = localStorage.getItem('cart');
-    if(localStorage.getItem('token') != null) {
-       window.location="#"
-    }
+if(localStorage.getItem('token') !== null) {
+   location.hash = "#";
+}
     
 function validateUsername () {
 	var username = document.forms["register-form"]["username"].value;
