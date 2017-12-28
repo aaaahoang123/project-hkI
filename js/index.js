@@ -25,18 +25,39 @@ toastr.options = {
 };
 // call page data
 function callPage(url, controller) {
-    $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "text",
-        success: function (res) {
-            $("#red-cards-view").html(res);
-            if (controller !== '' && controller !== undefined) loadController(controller);
-        },
-        error: function (res) {
-            console.log(res);
+    var req = new XMLHttpRequest();
+    req.open('GET', url, true);
+    req.onreadystatechange = function () {
+        if (this.readyState === 1) {
+            document.querySelector("#nav-progress-bar > div").style.width = "25%";
+            document.querySelector("#nav-progress-bar").style.opacity = "1";
         }
-    })
+        if (this.readyState === 2) {
+            document.querySelector("#nav-progress-bar").style.opacity = "1";
+            document.querySelector("#nav-progress-bar > div").style.width = "50%";
+        }
+        if (this.readyState === 3) {
+            document.querySelector("#nav-progress-bar").style.opacity = "1";
+            document.querySelector("#nav-progress-bar > div").style.width = "75%";
+        }
+        if (this.readyState === 4) {
+            document.querySelector("#nav-progress-bar").style.opacity = "1";
+            document.querySelector("#nav-progress-bar > div").style.width = "100%";
+            setTimeout(function () {
+                document.querySelector("#nav-progress-bar").style.opacity = "0";
+            }, 800);
+        }
+    };
+    req.onload = function () {
+        var res = this.responseText;
+        $("#red-cards-view").html(res);
+        if (controller !== '' && controller !== undefined) loadController(controller);
+    };
+    req.onerror = function () {
+        var res = this.responseText;
+        console.log(res);
+    };
+    req.send();
 }
 
 // create a script function

@@ -34,10 +34,10 @@
     </div>
 
 </section>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
-        <!--<div class="row">-->
+<div class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!--<div class="row">-->
             <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -93,9 +93,14 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="cursor: pointer;">Search</button>
                 </form>
             </div>
-        <!--</div>-->
+            <!--</div>-->
+        </div>
+    </nav>
+    <div class="progress" style="height: 3px; opacity: 0" id="nav-progress-bar">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-</nav>
+</div>
+
 
 <!-- Modal -->
 <section class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">

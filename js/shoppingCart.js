@@ -312,7 +312,6 @@ function removeproduct(el, id) {
         return e !== id;
     });
     localStorage.setItem('cart', JSON.stringify(cart));
-
 }
 
 function selectAll(el) {
