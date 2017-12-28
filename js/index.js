@@ -1,4 +1,9 @@
-const orderApi = "https://rlcapi.herokuapp.com/api/orders";
+const orderApi = "https://rlcapi.herokuapp.com/api/orders/",
+    productApi = 'https://rlcapi.herokuapp.com/api/products/',
+    userApi = 'https://rlcapi.herokuapp.com/api/user/',
+    brandApi = 'https://rlcapi.herokuapp.com/api/brands/',
+    categoryApi = 'https://rlcapi.herokuapp.com/api/categories/',
+    authenticationApi = 'https://rlcapi.herokuapp.com/api/authentication/';
 
 // config toastr
 toastr.options = {
@@ -17,7 +22,7 @@ toastr.options = {
   "hideEasing": "linear",
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
-}
+};
 // call page data
 function callPage(url) {
     $.ajax({

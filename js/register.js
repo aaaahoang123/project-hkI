@@ -111,7 +111,7 @@ function submit() {
 
     if (isValidUsername === true && isValidPassword === true && isCheckPassword === true && isValidEmail === true) { 
 			$.ajax({
-				url: 'https://rlcapi.herokuapp.com/api/user',
+				url: userApi,
 				method: "POST",
 				data: registerData,
 				success: function(res){

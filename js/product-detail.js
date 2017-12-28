@@ -3,7 +3,7 @@ function loadDetail() {
 	// Lấy ra id từ Url, cụ thể là location.hash, bằng cách bỏ đi hash template của nó
 	var productId = location.hash.replace('#productDetail/', '').replace('#productDetail', '');
 	$.ajax({
-		url: 'https://rlcapi.herokuapp.com/api/products/' + productId,
+		url: productApi + productId,
 		type: 'GET',
 		success: function(res) {
 			console.log(res);
@@ -28,7 +28,7 @@ function loadDetail() {
  //load phan related product.
 	    	function loadHint1() {
 				$.ajax({
-			  	url:'https://rlcapi.herokuapp.com/api/products?brandId=' + res.item.brandId,
+			  	url: productApi + '?brandId=' + res.item.brandId,
 			  	type:'GET',
 			  	success: function(res) {
 			  		console.log(res);
@@ -51,7 +51,7 @@ function loadDetail() {
  //load phan you may like.
  			function loadHint2() {
 				$.ajax({
-			  	url:'https://rlcapi.herokuapp.com/api/products?categoryId=' + res.item.categoryId,
+			  	url: productApi + '?categoryId=' + res.item.categoryId,
 			  	type:'GET',
 			  	success: function(res) {
 			  		console.log(res);
