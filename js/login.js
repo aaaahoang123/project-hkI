@@ -1,10 +1,9 @@
-
 function openLoginModal() {
     $("#login-modal").modal('show');
 }
 $('#login-modal').on('show.bs.modal', function () {
 	$('#loginError').hide();
-})
+});
 $('#loginError').hide();
 function login(){
 

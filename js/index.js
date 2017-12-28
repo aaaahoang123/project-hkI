@@ -24,13 +24,14 @@ toastr.options = {
   "hideMethod": "fadeOut"
 };
 // call page data
-function callPage(url) {
+function callPage(url, controller) {
     $.ajax({
         url: url,
         type: "GET",
         dataType: "text",
         success: function (res) {
             $("#red-cards-view").html(res);
+            if (controller !== '' && controller !== undefined) loadController(controller);
         },
         error: function (res) {
             console.log(res);
@@ -59,31 +60,31 @@ function loadController(scriptSrc) {
 // router of page
 function pageRouter() {
     if (location.hash === '#' || location.hash === '') {
-        callPage('pages/home.html');
-        loadController("js/home.js");
+        callPage('pages/home.html',"js/home.js");
+        //loadController("js/home.js");
     }
     else if (new RegExp('#register').test(location.hash)) {
-        callPage('pages/register.html');
-        loadController("js/register.js");
+        callPage('pages/register.html',"js/register.js");
+        //loadController("js/register.js");
     }
     else if (new RegExp('#products').test(location.hash)) {
-        callPage('pages/products.html');
-        loadController('js/products.js');
+        callPage('pages/products.html','js/products.js');
+        //loadController('js/products.js');
     }
     else if (new RegExp('#productDetail').test(location.hash)) {
-        callPage('pages/product-detail.html');
-        loadController("js/product-detail.js");
+        callPage('pages/product-detail.html',"js/product-detail.js");
+        //loadController("js/product-detail.js");
     }
     else if (new RegExp('#cart').test(location.hash)) {
-        callPage('pages/shoppingCart.html');
-        loadController('js/shoppingCart.js');
+        callPage('pages/shoppingCart.html','js/shoppingCart.js');
+        //loadController('js/shoppingCart.js');
     }
     else if (new RegExp('#contact').test(location.hash)) {
         callPage('pages/contact.html')
     }
     else if (new RegExp('#orderStatus').test(location.hash)) {
-        callPage('pages/orderStatus.html');
-        loadController('js/orderStatus.js');
+        callPage('pages/orderStatus.html','js/orderStatus.js');
+        //loadController('js/orderStatus.js');
     }
 }
 

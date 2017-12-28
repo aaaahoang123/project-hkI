@@ -66,7 +66,7 @@ function loadData() {
 $(document).ready(function(){
 	loadData();
 	checkSelect();
-})
+});
 
 function openDetailModal(data){
 	document.querySelector('#bodyProductDetail > div > div > div > a > img').src = data.images.bigImgs[0];
