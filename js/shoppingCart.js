@@ -21,7 +21,7 @@ function changetab(param) {
 }
 function checkCart() {
     var productId = localStorage.getItem('cart');
-    if(localStorage.getItem('cart') === null) {
+    if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
         document.querySelectorAll('main')[0].style.display = '';
     }
     else {
@@ -152,12 +152,18 @@ function cartTable(data,element) {
 }
 
 function countTotalPrice (price,inputElement,totalPriceElement) {
-    price = price.replace('$','');
-    price = new Number(price);
-    var quantity = Number(inputElement.value);
-    var totalPrice = quantity*price;
-    totalPrice += "$";
-    totalPriceElement.innerHTML = totalPrice;    
+    try {
+        price = price.replace('$','');
+        price = new Number(price);
+        var quantity = Number(inputElement.value);
+        var totalPrice = quantity*price;
+        totalPrice += "$";
+        totalPriceElement.innerHTML = totalPrice;
+    }
+    catch (err) {
+        var i=0;
+    }
+
 }
 
 $(document).ready(function(){
