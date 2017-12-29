@@ -5,13 +5,76 @@
             <li class="breadcrumb-item active" aria-current="page">Order status</li>
         </ol>
     </nav>
-<div class="tab-content" id="myTabContent">
-<div class="tab-pane fade show active" id="cart-tab" role="tabpanel" aria-labelledby="home-tab">
-        <section class="row">
-            <div class="col-md-4"><img src="img/po.gif" class="w-100"></div>
-            <div class="col-md-4">
-                <br><br><br><h3 class="animated infinite bounce text-center">..We are in process..</h3>
-                <br><h5 class="modal-title text-center"><em>Your order will be delivered within 2 working days</em></h5>
+    <div class="tab-content" id="myTabContent">
+        <div class="card-header">
+            CUSTOMER INFO
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-responsive-lg overflow-x:auto">
+                    <thead>
+                        <tr class="text-center">
+                            <th><em><i class="fa fa-user"></i></em></th>
+                            <th><em><i class="fa fa-envelope"></i></em></th>
+                            <th><em><i class="fa fa-phone-square"></i></em></th>
+                            <th><em><i class="fa fa-address-book"></i></em></th>
+                            <th><em><i class="fa fa-info-circle"></i></em></th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center" id="tb-customer">
+
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-4"><img src="img/po2.gif" class="w-100"></div>
+        </div>
+        <div class="card-header">
+            ORDER DETAIL
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-responsive-lg overflow-x:auto">
+                    <thead class="text-center">
+                        <tr>
+                            <th><em>No.</em></th>
+                            <th><em>Thumbnail</em></th>
+                            <th><em>Product</em></th>
+                            <th><em>Quantity</em></th>
+                            <th><em>Unit Price($)</em></th>
+                        </tr>
+                    </thead>
+                     <tbody class="text-center" id="tb-productsInOrder">
+        
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <h4 class="text-center text-danger mb-3">
+                    <em id="totalPrice">
+
+                    </em>
+                </h4>
+            </div>
+        </div>
+        <div class="card-header">
+            Other orders
+        </div>
+        <div class="row">
+            <table class="table table-responsive-lg overflow-x:auto">
+                <thead class="text-center">
+                    <tr>
+                        <th><em>Order ID</em></th>
+                        <th><em>Order date</em></th>
+                        <th><em>Total money</em></th>
+                        <th><em>Status</em></th>
+                    </tr>
+                </thead>
+                <tbody class="text-center" id="tb-otherOrder">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
                

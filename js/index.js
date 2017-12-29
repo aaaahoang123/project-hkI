@@ -1,3 +1,5 @@
+const orderApi = "https://rlcapi.herokuapp.com/api/orders";
+
 // config toastr
 toastr.options = {
   "closeButton": false,
@@ -75,7 +77,8 @@ function pageRouter() {
         callPage('pages/contact.html')
     }
     else if (new RegExp('#orderStatus').test(location.hash)) {
-        callPage('pages/orderStatus.html')
+        callPage('pages/orderStatus.html');
+        loadController('js/orderStatus.js');
     }
 }
 
@@ -94,12 +97,28 @@ function addToCart(id) {
   if(localStorage.getItem('cart') === null) {
     var idArray = new Array(id);
     localStorage.setItem('cart', JSON.stringify(idArray));
-    alert('ok');
+    toastr["success"]('<strong>Add to cart success.</strong>');
   }
   else {
-    idArray = JSON.parse(localStorage.getItem('cart'));
-    idArray.push (id);
-    localStorage.setItem('cart', JSON.stringify(idArray));
-    alert('ok');
+      var isExistP = checkExistInCart(id);
+
+      if (isExistP === false) {
+        idArray = JSON.parse(localStorage.getItem('cart'));
+        idArray.push(id);
+        localStorage.setItem('cart', JSON.stringify(idArray));
+        toastr["success"]('<strong>Add to cart success.</strong>');
+      }
   }
+}
+function checkExistInCart(id){
+  var isExist = false;
+  for(var i = 0; i < JSON.parse(localStorage.getItem('cart')).length; i++){
+    if((JSON.parse(localStorage.getItem('cart')))[i] === id){
+      toastr["warning"]('<strong>Products already in the cart.</strong>');
+      isExist = true;
+      break;
+    }
+    isExist = false;
+  }
+  return isExist;
 }

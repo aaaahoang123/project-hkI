@@ -1,4 +1,19 @@
-<main class="container">
+<main class="container" style="display: none">
+    <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shopping cart</li>
+        </ol>
+    </nav>
+    <section>
+        <br><h3 style="color: red" class="text-center">You do not have anything in your shopping cart!</h3><br>
+        <h5 class="text-center">You can <a href="#">continue shopping</a>  and add something to your cart.</h5><br>
+        <h6 class="text-center"><em>Red Cards Limited makes online shopping easy by allowing shoppers to shop across million of products, hundreds of stores and thousands of name brands with the convenience of our universal shopping cart.</em></h6>
+        <br><br><br>
+    </section>            
+</main>
+
+<main class="container" style="display: none">
     <nav aria-label="breadcrumb" role="navigation">
         <ol class="breadcrumb">
             <li class="breadcrumb-item" aria-current="page"><a href="#">Home</a></li>
@@ -6,7 +21,7 @@
         </ol>
     </nav>
     <section class="row bs-wizard border-bottom-0">
-        <div class="col-4 bs-wizard-step complete">
+        <div class="col-4 bs-wizard-step active">
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-shopping-cart fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a onclick="changetab('cartTab')" class="bs-wizard-dot"></a>
@@ -15,19 +30,19 @@
             </div>
         </div>
 
-        <div class="col-4 bs-wizard-step complete"><!-- complete -->
+        <div class="col-4 bs-wizard-step"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-map-marker fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a onclick="changetab('delivery')" class="bs-wizard-dot"></a>
+            <a id="deliveryTab" onclick="changetab('delivery')" class="bs-wizard-dot" style="display: none"></a>
             <div class="bs-wizard-info text-center">
                 Delivery
             </div>
         </div>
 
-        <div class="col-4 bs-wizard-step active"><!-- complete -->
+        <div class="col-4 bs-wizard-step"><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-fw fa-cc-mastercard"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a onclick="changetab('confirm')" class="bs-wizard-dot"></a>
+            <a id="confirmTab" onclick="changetab('confirm')" class="bs-wizard-dot" style="display: none"></a>
             <div class="bs-wizard-info text-center">
                 Confirm
             </div>
@@ -46,9 +61,7 @@
 	</ul>
 	<div class="tab-content" id="myTabContent">
 	  <div class="tab-pane fade show active" id="cart-tab" role="tabpanel" aria-labelledby="home-tab">
-	  	<section class="row">
-
-    
+	  	<section class="row">  
             <div class="card-header col-12">
                 Shopping cart
                 <!-- Class float-right để float right =))-->
@@ -67,16 +80,15 @@
                         <th><em>Check</em></th>
                         <th><em>Thumbnail</em></th>
                         <th><em>Product</em></th>
-                        <th><em>Quantity</em></th>
-                        <th><em>Price($)</em></th>
-                        <th><em>Discount($)</em></th>
-                        <th><em>Total($)</em></th>
+                        <th><em>Price</em></th>
+                        <th><em>Quantity</em></th> 
+                        <th><em>Total</em></th>
                         <th><em>Remove</em></th>
                     </tr>
                     </thead>
 
-                    <tbody>
-                    <tr>
+                    <tbody>                       
+                    <!-- <tr>
                         <td class="text-center">
                             <label class="custom-control mr-0 custom-checkbox">
                                 <input type="checkbox" class="custom-control-input product-selector" name="checkbox">
@@ -120,18 +132,18 @@
                         <td>$</td>
                         <td>$</td>
                         <td class="text-center"><button type="button" class="close float-none" onclick="removeproduct(this)">&times;</button></td>
-                    </tr>
+                    </tr> -->
                     </tbody>
                 </table>
             </section>
             <div class="card-footer p-0 bg-white pt-3">
-            <h4 class="text-center text-danger mb-3"><em>TOTAL($): 6969.69</em></h4>
+            <h4 class="text-center text-danger mb-3"><em id="total-all">Total: 0$</em></h4>
             </div>
             <div class="card-footer p-0 bg-white pt-3">
                 <nav aria-label="...">
                     <ul class="pagination justify-content-end">
                         <li class="page-item">
-                            <a onclick="changetab('delivery')" class="page-link" style="cursor:pointer;">Next</a>
+                            <a class="page-link" style="cursor:pointer;" onclick="deliveryTab()">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -156,7 +168,7 @@
 	                  </div>
 	                </label>
 	                <div class="col-5">
-	                    <input type="text" class="form-control" placeholder="Your full name">
+	                    <input id="cus-name" type="text" class="form-control" placeholder="Your full name" onchange="isValidName()" onkeyup="confirmCustomer()">
 	                </div>
 	            </div>
 
@@ -167,7 +179,7 @@
                       </div>
                     </label>
                     <div class="col-5">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input id="cus-email" type="email" class="form-control" placeholder="Email (Not required)" onkeyup="confirmCustomer()">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -177,7 +189,7 @@
                       </div>
                     </label>
                     <div class="col-5">
-                        <input type="text" class="form-control" placeholder="Phone number">
+                        <input id="cus-phone" type="text" class="form-control" placeholder="Phone number (Not required)" onkeyup="confirmCustomer()">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -187,7 +199,7 @@
                       </div>
                     </label>
                     <div class="col-5">
-                        <input type="text" class="form-control" placeholder="Your address">
+                        <input id="cus-address" type="text" class="form-control" placeholder="Your address" onchange="isValidAddress()" onkeyup="confirmCustomer()">
                     </div>
                 </div>
             <br>
@@ -198,7 +210,7 @@
                             <a onclick="changetab('cartTab')" class="page-link" style="cursor:pointer;">Previous</a>
                         </li>
                         <li class="page-item">
-                            <a onclick="changetab('confirm')" class="page-link" style="cursor:pointer;">Next</a>
+                            <a onclick="confirmTab()" class="page-link" style="cursor:pointer;">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -212,16 +224,17 @@
               <div class="col-sm-12">
               	<table class="table table-responsive-lg overflow-x:auto">
               		<thead>
+
                     <tr>
-                    	<th><em>No.</em></th>
                         <th><em>Thumbnail</em></th>
                         <th><em>Product</em></th>
                         <th><em>Quantity</em></th>
-                        <th><em>Total($)</em></th> 
+                        <th><em>Total</em></th> 
                     </tr>
+
                     </thead>
-	                 <tbody>
-	                    <tr>
+	                 <tbody id="confirmProduct">
+	                    <!-- <tr>
 	                    	<td>1</td> 
 	                        <td><img src="img/mini2.jpg" alt=""></td>
 	                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
@@ -241,7 +254,7 @@
 	                        <td><a href="#productDetail/" target="_blank">HUSBAND`S BIRTHDAY GREETING CARD</a></td>
 	                        <td>N</td>
 	                        <td>$</td> 
-	                    </tr>
+	                    </tr> -->
 	                 </tbody>
                 </table>
                 <div class="card-footer p-0 bg-white pt-3">
@@ -254,8 +267,8 @@
 			                  	<i class="fa fa-user"></i>
 			                  </div>
 			                </label>
-			                <div class="col-7 text-center">
-			                    Demo
+			                <div id="confirmName" class="col-7 text-center">
+			                    
 			                </div>
 			            </div>
 
@@ -265,8 +278,8 @@
 		                        <i class="fa fa-envelope" aria-hidden="true"></i>
 		                      </div>
 		                    </label>
-		                    <div class="col-7 text-center">
-		                        Demo
+		                    <div id="confirmEmail" class="col-7 text-center">
+		                        
 		                    </div>
 		                </div>
 		                <div class="form-group row">
@@ -275,8 +288,8 @@
 		                        <i class="fa fa-phone-square" aria-hidden="true"></i>
 		                      </div>
 		                    </label>
-		                    <div class="col-7 text-center">
-		                        Demo 
+		                    <div id="confirmPhone" class="col-7 text-center">
+		                        
 		                    </div>
 		                </div>
 		                <div class="form-group row">
@@ -285,14 +298,14 @@
 		                        <i class="fa fa-address-book" aria-hidden="true"></i>
 		                      </div>
 		                    </label>
-		                    <div class="col-7 text-center">
-		                        Demo
+		                    <div id="confirmAddress" class="col-7 text-center">
+		                        
 		                    </div>
 		                </div>
 				        </div>
 				        <div class="col-sm-4">
 				          <div class="form-group row">
-				          	<div class="col-sm-12"><h4 class="text-center text-danger mb-3"><em>TOTAL($): 6969.69</em></h4></div>
+				          	<div class="col-sm-12"><h4 class="text-center text-danger mb-3"><em id="confirm-total"></em></h4></div>
 				        	<button type="button" data-toggle="modal" data-target="#confirm-alert" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
 				        	<img src="img/hands.jpg" class="w-100">
 				          </div>
@@ -315,14 +328,14 @@
 <!--modal confirm-->	
 <section class="modal fade" id="confirm-alert" tabindex="-1" role="dialog" aria-hidden="true"><br><br><br>
     <div class="modal-dialog" role="document">
-        <div class="modal-content" style="border: 10px solid 	#87CEEB">
+        <div class="modal-content" style="border: 10px solid #87CEEB">
             	<div class="text-center">
                 <h4 class="modal-title">Your order is ready for pickup!</h4>
                 </div>
             <div class="modal-body">
                 <form> 
                 	<div class="text-center">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#order-done" style="cursor:pointer;">Confirm</button>
+                            <button type="button" class="btn btn-primary" style="cursor:pointer;" onclick="sendOrder()">Confirm</button>
                             <button type="button" class="btn btn-light" data-dismiss="modal" style="cursor:pointer;">Decline</button>
                     </div>   
                 </form>
