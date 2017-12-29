@@ -1,6 +1,6 @@
 function loadHallMarkProduct() {
   $.ajax({
-  	url:'https://rlcapi.herokuapp.com/api/products?brandId=5a3b717a286d242000b05096',
+  	url: productApi + '?brandId=5a3b717a286d242000b05096',
   	type:'GET',
   	success: function(res) {
 	    for (var i=0; i<res.items.length && i<4; i++) {
@@ -19,12 +19,11 @@ $(location).ready(function(){
 
 function loadBirthdayProduct() {
   $.ajax({
-  	url:'https://rlcapi.herokuapp.com/api/products?categoryId=5a3bc84c60738a2000ebca1d',
+  	url: productApi + '?categoryId=5a3bc84c60738a2000ebca1d',
   	type:'GET',
   	success: function(res) {
 	    for (var i=0; i<res.items.length && i<4; i++) {
 	    	createProductTag(res.items[i], document.getElementById('birthday-cards'));
-            console.log(res);
 	    }
   	},
   	error: function(res) {
@@ -49,10 +48,11 @@ function createProductTag(data,element) {
 	anchorImg.appendChild(img);
 
 	var cardTitle = document.createElement('h6');
-	cardTitle.className = 'card-title';
+	cardTitle.className = 'card-title text-danger';
 	cardTitle.innerHTML = data.name;
 
-	var price = document.createElement('p');
+	var price = document.createElement('b');
+	price.className = "text-dark";
 	price.innerHTML = data.price;
 
 	var cardBody = document.createElement('div');

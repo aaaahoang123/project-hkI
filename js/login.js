@@ -1,10 +1,9 @@
-
 function openLoginModal() {
     $("#login-modal").modal('show');
 }
 $('#login-modal').on('show.bs.modal', function () {
 	$('#loginError').hide();
-})
+});
 $('#loginError').hide();
 function login(){
 
@@ -14,18 +13,16 @@ function login(){
          "username": username,
          "password": password
       };
-
-    var urlAPI = "https://rlcapi.herokuapp.com/api/authentication";
     $.ajax({
       type: "POST",
-      url: urlAPI,
+      url: authenticationApi,
       data: loginData,
       success: function(res){
         console.log(res);
-        toastr["success"]('<strong>Đăng nhập thành công.</strong>');
+        toastr["success"]('<strong>Login successfully!</strong>');
         localStorage.setItem("token", res.token);
         localStorage.setItem("username", username);
-    		setTimeout("location.reload(true);",1500);
+    		setTimeout("location.reload(true);",1200);       
       },
       error: function(errorRes){
         console.log(errorRes.responseJSON.error);
@@ -56,7 +53,7 @@ else {
 
 function signOut(){
     $.ajax({
-    	url: "https://rlcapi.herokuapp.com/api/authentication",
+    	url: authenticationApi,
     	type: "DELETE",
     	data: {
     		'token': localStorage.getItem('token')

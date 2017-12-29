@@ -21,28 +21,28 @@
         </ol>
     </nav>
     <section class="row bs-wizard border-bottom-0">
-        <div class="col-4 bs-wizard-step active">
+        <div class="col-4 bs-wizard-step ">
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-shopping-cart fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a onclick="changetab('cartTab')" class="bs-wizard-dot"></a>
+            <a onclick="changetab('cartTab')" class="bs-wizard-dot" style="cursor: pointer;"></a>
             <div class="bs-wizard-info text-center">
                 Shopping Cart
             </div>
         </div>
 
-        <div class="col-4 bs-wizard-step"><!-- complete -->
+        <div class="col-4 bs-wizard-step "><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-map-marker fa-fw"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a id="deliveryTab" onclick="changetab('delivery')" class="bs-wizard-dot" style="display: none"></a>
+            <a id="deliveryTab" onclick="changetab('delivery')" class="bs-wizard-dot" style="display: none; cursor: pointer;"></a>
             <div class="bs-wizard-info text-center">
                 Delivery
             </div>
         </div>
 
-        <div class="col-4 bs-wizard-step"><!-- complete -->
+        <div class="col-4 bs-wizard-step "><!-- complete -->
             <div class="text-center bs-wizard-stepnum"><i class="fa fa-fw fa-cc-mastercard"></i></div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a id="confirmTab" onclick="changetab('confirm')" class="bs-wizard-dot" style="display: none"></a>
+            <a id="confirmTab" onclick="changetab('confirm')" class="bs-wizard-dot" style="display: none; cursor: pointer;"></a>
             <div class="bs-wizard-info text-center">
                 Confirm
             </div>
@@ -306,7 +306,7 @@
 				        <div class="col-sm-4">
 				          <div class="form-group row">
 				          	<div class="col-sm-12"><h4 class="text-center text-danger mb-3"><em id="confirm-total"></em></h4></div>
-				        	<button type="button" data-toggle="modal" data-target="#confirm-alert" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
+				        	<button type="button" onclick="confirmLogin()" class="btn btn-warning btn-lg btn-block" style="cursor:pointer;">Place Order</button>
 				        	<img src="img/hands.jpg" class="w-100">
 				          </div>
 				        </div>
@@ -366,5 +366,26 @@
     </div>   
 </main>
 
-
+<!--Not yet login-->
+<section class="modal fade" id="confirm-login" tabindex="-1" role="dialog" aria-hidden="true"><br><br><br>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+                <div class="text-center">
+                <h4 class="modal-title text-warning">You must login to place order!</h4>
+                </div>
+            <div class="modal-body">
+                <form> 
+                    <div class="text-center">
+                            <button class="btn btn-outline-warning hover-pointer" data-toggle="modal" data-target="#login-modal" data-dismiss="modal">
+                                Login <i class="fa fa-sign-in"></i>
+                            </button>
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    </div>   
+</main>
    
