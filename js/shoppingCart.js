@@ -21,24 +21,23 @@ function changetab(param) {
 }
 function checkCart() {
     var productId = localStorage.getItem('cart');
-    if(localStorage.getItem('cart') === null) {
+    if(localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0) {
         document.querySelectorAll('main')[0].style.display = '';
     }
     else {
         document.querySelectorAll('main')[1].style.display = '';
         $.ajax({
-            url: 'https://rlcapi.herokuapp.com/api/products/',
+            url: productApi,
             type: 'GET',
             data: {itemIds: productId},
             success: function(res) {
-             var totalAll =0;
-             for (var i=0; i<res.items.length; i++) {
-                cartTable(res.items[i], document.querySelector('table > tbody'));  
-                             };                 
+                 for (var i=0; i<res.items.length; i++) {
+                    cartTable(res.items[i], document.querySelector('table > tbody'));
+                 }
             },
             error: function(res) {
-             console.log(res)
-            } 
+                console.log(res)
+            }
         });    
     }
 }
@@ -53,10 +52,13 @@ function cartTable(data,element) {
     checkInput.type = "checkbox";
     checkInput.onchange = function(e) {
         if (e.target.checked) {
+            quantity.setAttribute("readonly", "true");
+            remove.setAttribute("disabled", "true");
             bindToConfirm(data,document.querySelector('#confirmProduct'));
-            countTotalAll();
         }
         else {
+            quantity.removeAttribute("readonly");
+            remove.removeAttribute("disabled");
             orderDataToSend.products = orderDataToSend.products.filter(function(e){
                 return e.productId !== data._id;
             });
@@ -68,9 +70,9 @@ function cartTable(data,element) {
                 // statements
                 console.log(err);
             }
-            countTotalAll();
         }
-    };   
+        countTotalAll();
+    };
 
     var checkSpan = document.createElement('span');
     checkSpan.className = "custom-control-indicator";
@@ -108,7 +110,7 @@ function cartTable(data,element) {
     quantity.type = "number";
     quantity.min = 1;
     quantity.value = 1;
-    
+
     var tdQuantity = document.createElement('td');
     tdQuantity.appendChild(quantity);
 
@@ -131,7 +133,7 @@ function cartTable(data,element) {
     remove.type = "button";
     remove.innerHTML = "&times;";
     remove.onclick = function(e){
-        removeproduct(e.target);
+        removeproduct(e.target, data._id);
     };
     
     var tdRemove = document.createElement('td');
@@ -152,12 +154,18 @@ function cartTable(data,element) {
 }
 
 function countTotalPrice (price,inputElement,totalPriceElement) {
-    price = price.replace('$','');
-    price = new Number(price);
-    var quantity = Number(inputElement.value);
-    var totalPrice = quantity*price;
-    totalPrice += "$";
-    totalPriceElement.innerHTML = totalPrice;    
+    try {
+        price = price.replace('$','');
+        price = new Number(price);
+        var quantity = Number(inputElement.value);
+        var totalPrice = quantity*price;
+        totalPrice += "$";
+        totalPriceElement.innerHTML = totalPrice;
+    }
+    catch (err) {
+        var i=0;
+    }
+
 }
 
 $(document).ready(function(){
@@ -216,7 +224,7 @@ function placeOrder() {
         var res = JSON.parse(this.responseText);
         toastr["warning"]("Place order fail for some reasons....");
         console.log(res)
-    }
+    };
     req.send(JSON.stringify(orderDataToSend));
 }
 
@@ -299,9 +307,14 @@ function countTotalAll() {
     document.querySelector('#confirm-total').innerHTML = 'Total: ' + sum + '$';
 }
 
-function removeproduct(el) {
-                    el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
-                }
+function removeproduct(el, id) {
+    el.parentNode.parentNode.parentNode.removeChild(el.parentNode.parentNode);
+    var cart = JSON.parse(localStorage.getItem('cart'));
+    cart = cart.filter(function(e){
+        return e !== id;
+    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 function selectAll(el) {
     var productSelector = document.getElementsByClassName("custom-control-input product-selector");

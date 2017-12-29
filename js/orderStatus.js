@@ -1,7 +1,6 @@
 function loadOrder () {
 	var req = new XMLHttpRequest();
-	var UrlApi = 'https://rlcapi.herokuapp.com/api/orders';
-	req.open('GET', UrlApi);
+	req.open('GET', orderApi);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.setRequestHeader('token', localStorage.getItem('token'));
 
@@ -167,7 +166,7 @@ function displayOtherOrder(data) {
 
 function loadProducts(idArray) {
 	$.ajax({
-	    url: 'https://rlcapi.herokuapp.com/api/products',
+	    url: productApi,
 	    type: "GET",
 	    data: {
 	    	itemIds: JSON.stringify(idArray)

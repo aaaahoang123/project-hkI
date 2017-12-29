@@ -1,10 +1,9 @@
-
 function openLoginModal() {
     $("#login-modal").modal('show');
 }
 $('#login-modal').on('show.bs.modal', function () {
 	$('#loginError').hide();
-})
+});
 $('#loginError').hide();
 function login(){
 
@@ -14,11 +13,9 @@ function login(){
          "username": username,
          "password": password
       };
-
-    var urlAPI = "https://rlcapi.herokuapp.com/api/authentication";
     $.ajax({
       type: "POST",
-      url: urlAPI,
+      url: authenticationApi,
       data: loginData,
       success: function(res){
         console.log(res);
@@ -56,7 +53,7 @@ else {
 
 function signOut(){
     $.ajax({
-    	url: "https://rlcapi.herokuapp.com/api/authentication",
+    	url: authenticationApi,
     	type: "DELETE",
     	data: {
     		'token': localStorage.getItem('token')

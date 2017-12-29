@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Hello, world!</title>
+    <title>Red Cards Limited INC.</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/cssfooter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+    <link rel="icon" href="img/miniLogo.png">
 </head>
 <body>
 <section class="bg-danger">
@@ -22,7 +23,7 @@
             </div>
             <div class="col-8">
                 <div class="float-right" id="login-logout"> <!-- Khối chức năng, bên phải header -->
-                    <a class="text-white hover-pointer" href="#orderStatus">Order Status</a> <!-- 0 -->
+                    <a class="text-white hover-pointer" href="#orderStatus/">Order Status</a> <!-- 0 -->
                     |
                     <a class="text-white hover-pointer hover-underline">Login</a> <!-- 1 -->
                     /
@@ -33,10 +34,10 @@
     </div>
 
 </section>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
-        <!--<div class="row">-->
+<div class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!--<div class="row">-->
             <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,7 +61,7 @@
                             <a class="dropdown-item" href="#products/?brandId=5a3b73c8286d242000b0509a">Moo</a>
                             <a class="dropdown-item" href="#products/?brandId=5a3b7474286d242000b0509b">Cardstore</a>
                             <a class="dropdown-item" href="#products/?brandId=5a3bac5c45982320000f99f6">Garlanna</a>
-                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider" id="brand-navigation"></div>
                             <a class="dropdown-item" href="#products/">View All</a>
                         </div>
 
@@ -76,7 +77,7 @@
                             <a class="dropdown-item" href="#products/?categoryId=5a3bc90760738a2000ebca20">Engagement Cards</a>
                             <a class="dropdown-item" href="#products/?categoryId=5a3bc92d60738a2000ebca21">Wedding Cards</a>
                             <a class="dropdown-item" href="#products/?categoryId=5a3bc94f60738a2000ebca22">Anniversary Cards</a>
-                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider" id="category-navigation"></div>
                             <a class="dropdown-item" href="#products/">View All</a>
                         </div>
                     </li>
@@ -92,9 +93,14 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="cursor: pointer;">Search</button>
                 </form>
             </div>
-        <!--</div>-->
+            <!--</div>-->
+        </div>
+    </nav>
+    <div class="progress" style="height: 3px; opacity: 0" id="nav-progress-bar">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-</nav>
+</div>
+
 
 <!-- Modal -->
 <section class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -148,9 +154,10 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <h3> About Us </h3>
-                    <p>Red Cards Limited is a big company selling cards for various occasions. We have a huge
-                       collection of cards with one of a kind way of designing. We have met for thousands of customer's expectation.
-                       Our greatest goal is to bring customer's happiest and satisfaction.<br>
+                    <p style="white-space: pre-line">Red Cards Limited is a big company selling cards for various occasions. We have a huge collection of cards with one of a kind way of designing. We have met for thousands of customer's expectation.
+
+                       Our greatest goal is to bring customer's happiest and satisfaction.
+
                        Make your life a better life with cards of join and blissful! We sure help you!</p>
                 </div>
                 <div class="col-lg-3 col-md-3">

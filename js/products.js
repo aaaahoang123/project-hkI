@@ -5,16 +5,12 @@ function loadData() {
 	// bên nav ở index thì e add href bằng cái link có ?categoryId luôn dc k!! thử liền đi là biết!!!
 	var search = location.hash.replace('#products/', '').replace('#products', '');
 	// console.log(search);
-	var url = 'https://rlcapi.herokuapp.com/api/products' + search;
-	console.log(url);
+	var url = productApi + search;
 	$.ajax({
 		url: url,
 		type:'GET',
 		success: function(res){
 			var page = Number(getURLParameter('page'));
-
-			
-			
 			var totalPage = Number(res.totalPage);
 			
 			if (page === 0) {
@@ -70,7 +66,7 @@ function loadData() {
 $(document).ready(function(){
 	loadData();
 	checkSelect();
-})
+});
 
 function openDetailModal(data){
 	document.querySelector('#bodyProductDetail > div > div > div > a > img').src = data.images.bigImgs[0];
@@ -144,10 +140,11 @@ function bindCard(data, element) {
 
 	anchor.appendChild(img);
 
-	var cardTitle = document.createElement('h5');
-	cardTitle.className = 'card-title';
+	var cardTitle = document.createElement('h6');
+	cardTitle.className = 'card-title text-danger';
 	cardTitle.innerHTML = data.name;
-	var price = document.createElement('p');
+	var price = document.createElement('b');
+	price.className = 'text-dark';
 	price.innerHTML = data.price;
 
 	var cardBody = document.createElement('div');
@@ -203,7 +200,6 @@ function createPagination(i, element, page) {
 	pageLink.className = 'page-link';
 	pageLink.innerHTML = i + 1;
 	var anchor = document.createElement('a');
-	console.log('page=' + page);
 	anchor.href = location.hash.replace('page=' + page, 'page=' + (i + 1));
 
 	// var urlHasCategory = new RegExp("categoryId=").test(location.hash);

@@ -1,17 +1,18 @@
-var productId = localStorage.getItem('cart');
-    if(localStorage.getItem('token') != null) {
-       window.location="#"
-    }
+if(localStorage.getItem('token') !== null) {
+   location.hash = "#";
+}
     
 function validateUsername () {
 	var username = document.forms["register-form"]["username"].value;
 	var message1 = document.getElementById('usernameMessage');
 	if (username.length < 8 ) {
+        document.forms["register-form"]["username"].className = "form-control is-invalid";
 		message1.style.color = "red";
         message1.innerHTML = '&nbsp*Username must contain at least 8 characters';
 		return false;
 	}
 	else {
+        document.forms["register-form"]["username"].className = "form-control is-valid";
     	message1.style.color = "#66cc66";
         message1.innerHTML = '&nbspValid username!';
         return true;
@@ -22,11 +23,13 @@ function validatePassword () {
 	var password = document.forms["register-form"]["password"].value;
 	var message2 = document.getElementById('passwordMessage');
 	if (password.length < 8 ) {
+        document.forms["register-form"]["password"].className = 'form-control is-invalid';
 		message2.style.color = "red";
         message2.innerHTML = '&nbsp*Passwords must contain at least 8 characters';
 		return false;
 	}
 	else {
+        document.forms["register-form"]["password"].className = 'form-control is-valid';
     	message2.style.color = "#66cc66";
         message2.innerHTML = '&nbspValid passwords!'
         return true;
@@ -37,12 +40,14 @@ function checkPassword() {
 	var password = document.forms["register-form"]["password"].value;
 	var confirmPassword = document.forms["register-form"]["confirmPassword"].value;
 	var message = document.getElementById('confirmPasswordMessage');
-	if (password === confirmPassword) {	
+	if (password === confirmPassword) {
+        document.forms["register-form"]["confirmPassword"].className = 'form-control is-valid';
         message.style.color = "#66cc66";
         message.innerHTML = '&nbspPasswords Match!';
         return true;
 	}
 	else {
+        document.forms["register-form"]["confirmPassword"].className = 'form-control is-invalid';
 		message.style.color = "red";
         message.innerHTML = "&nbsp*Passwords Don't Match";
         return false;
@@ -58,10 +63,12 @@ function validate() {
   var result = document.getElementById('emailMessage');
   var email = document.forms["register-form"]["email"].value;
   if (validateEmail(email)) {
+  	document.forms["register-form"]["email"].className = 'form-control is-valid';
     result.style.color = "#66cc66";
     result.innerHTML = "&nbspValid email!";
     return true;
   } else {
+  	document.forms["register-form"]["email"].className = 'form-control is-invalid';
     result.style.color = "red";
     result.innerHTML = "&nbsp*Invalid email";
     return false;
@@ -101,17 +108,17 @@ function submit() {
 	}
 
 	if (isCheckPassword === false) {
-				toastr["warning"]("Please retype your passwords correctly!");
-				return false;
-			}
+		toastr["warning"]("Please retype your passwords correctly!");
+		return false;
+	}
 	if (isValidEmail === false) {
-					toastr["warning"]("Please enter your email correctly!");
-					return false;
-				};	
+		toastr["warning"]("Please enter your email correctly!");
+		return false;
+	}
 
-    if (isValidUsername === true && isValidPassword === true && isCheckPassword === true && isValidEmail === true) { 
+    if (isValidUsername && isValidPassword && isCheckPassword && isValidEmail) {
 			$.ajax({
-				url: 'https://rlcapi.herokuapp.com/api/user',
+				url: userApi,
 				method: "POST",
 				data: registerData,
 				success: function(res){
@@ -127,5 +134,3 @@ function submit() {
 			});
 		}	
 }
-
-
