@@ -31,7 +31,7 @@ function validatePassword () {
 	else {
         document.forms["register-form"]["password"].className = 'form-control is-valid';
     	message2.style.color = "#66cc66";
-        message2.innerHTML = '&nbspValid password!';
+        message2.innerHTML = '&nbspValid passwords!'
         return true;
     } 
 }

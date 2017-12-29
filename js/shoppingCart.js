@@ -52,11 +52,13 @@ function cartTable(data,element) {
     checkInput.type = "checkbox";
     checkInput.onchange = function(e) {
         if (e.target.checked) {
-            quantity.setAttribute("readonly", 'true');
+            quantity.setAttribute("readonly", "true");
+            remove.setAttribute("disabled", "true");
             bindToConfirm(data,document.querySelector('#confirmProduct'));
         }
         else {
             quantity.removeAttribute("readonly");
+            remove.removeAttribute("disabled");
             orderDataToSend.products = orderDataToSend.products.filter(function(e){
                 return e.productId !== data._id;
             });
