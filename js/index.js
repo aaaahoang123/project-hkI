@@ -114,6 +114,7 @@ $(document).ready(function () {
     pageRouter();
 });
 window.addEventListener('hashchange', function () {
+    $(document).find('.zoomContainer').remove();
     $('.modal').modal('hide');
     setTimeout(function () {
         pageRouter();
