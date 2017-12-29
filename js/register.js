@@ -13,7 +13,7 @@ function validateUsername () {
 	}
 	else {
     	message1.style.color = "#66cc66";
-        message1.innerHTML = '&nbspValid passwords!';
+        message1.innerHTML = '&nbspValid username!';
         return true;
     }
 }
@@ -28,7 +28,7 @@ function validatePassword () {
 	}
 	else {
     	message2.style.color = "#66cc66";
-        message2.innerHTML = '&nbspValid username!';
+        message2.innerHTML = '&nbspValid passwords!'
         return true;
     } 
 }
